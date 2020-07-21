@@ -316,7 +316,6 @@ main .loginContainer .authContainer .firebaseui-list-item button:hover, main .lo
 header {
   height: 10vh;
   background: #f1f2ee;
-  border: 1px dotted #435058;
 }
 
 header .headerContainer {
