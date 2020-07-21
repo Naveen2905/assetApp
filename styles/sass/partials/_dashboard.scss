@@ -1,4 +1,4 @@
-header {
+.dashboardHeaderSection {
     height: 10vh;
     background: #f1f2ee;
     // border: 1px dotted #435058;
@@ -42,7 +42,7 @@ header {
         }
     }
 }
-main {
+.dashboardMainSection {
     height: 90vh;
     background: #f1f2ee;
 }
