@@ -332,14 +332,6 @@ a {
           justify-content: center;
 }
 
-.dashboardHeaderSection .headerContainer .heading {
-  text-transform: capitalize;
-  font-family: "Noto Sans KR", sans-serif;
-  font-size: calc(1.5rem + 0.5vw);
-  text-align: center;
-  color: #435058;
-}
-
 .dashboardHeaderSection .headerContainer .photoButtonContainer {
   height: auto;
   display: -webkit-box;
@@ -365,6 +357,14 @@ a {
 .dashboardHeaderSection .headerContainer .photoButtonContainer .userImage {
   border-radius: 1rem;
   width: 5rem;
+}
+
+.dashboardHeaderSection .headerContainer .photoButtonContainer .heading {
+  text-transform: capitalize;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: calc(1.5rem + 0.5vw);
+  text-align: center;
+  color: #435058;
 }
 
 .dashboardHeaderSection .headerContainer .photoButtonContainer .logOutButton {
