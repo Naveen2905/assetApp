@@ -25,10 +25,10 @@ $(function () {
                 // console.log("  Email: " + profile.email);
                 // console.log("  Photo URL: " + profile.photoURL);
                 if (profile.photoURL == null) {
-                    $('.userPhoto').append(`<img class='image' src="${placeHolderUserImage}" alt="${profile.displayName} Image">`)
+                    $('.userPhoto').append(`<img class='placeholderImage' src="${placeHolderUserImage}" alt="${profile.displayName} Image">`)
                 }
                 else {
-                    $('.userPhoto').append(`<img class='image' src="${profile.photoURL}" alt="${profile.displayName} Image">`)
+                    $('.userPhoto').append(`<img class='userImage' src="${profile.photoURL}" alt="${profile.displayName} Image">`)
                 }
             });
         }

@@ -354,9 +354,14 @@ a {
           justify-content: space-between;
 }
 
-.dashboardHeaderSection .headerContainer .photoButtonContainer .image {
-  width: 3rem;
+.dashboardHeaderSection .headerContainer .photoButtonContainer .placeholderImage {
+  width: 2rem;
   height: auto;
+}
+
+.dashboardHeaderSection .headerContainer .photoButtonContainer .userImage {
+  border-radius: 1rem;
+  width: 5rem;
 }
 
 .dashboardHeaderSection .headerContainer .photoButtonContainer .logOutButton {
