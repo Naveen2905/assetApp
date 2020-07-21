@@ -6,15 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/style.css">
     <title>Login - Asset Tracking App</title>
 
 </head>
 
 <body>
-    <h1>Please login below</h1>
-    <div id="firebaseui-auth-container"></div>
-    <div id="loader">Loading...</div>
+
+    <main>
+        <section class="loginContainer wrapper">
+            <div class="logo">
+                <img src="./assets/logo.png" alt="Asset Tracking aap Logo">
+            </div>
+            <h1 class="loginHeading">welcome to asset logging app</h1>
+            <div id="firebaseui-auth-container" class="authContainer"></div>
+            <div id="loader">Loading...</div>
+        </section>
+    </main>
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
     <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
