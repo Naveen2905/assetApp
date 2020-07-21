@@ -23,14 +23,26 @@
             </div>
         </section>
     </header>
-    <main class="dashboardMainSection">
 
+    <main class="dashboardMainSection">
+        <section class="dateContainer wrapper">
+            <button class="addAsset">
+                add new asset
+            </button>
+            <input type="search" class="searchAsset" placeholder="Search Asset">
+            <div class="currentDate"></div>
+        </section>
+
+        <section class="resultDashboardArea wrapper">
+            <p class="dashboardHeading">dashboard</p>
+        </section>
     </main>
 
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
     <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment-with-locales.min.js"></script>
     <script src="./scripts/firebase.js"></script>
     <script src="./scripts/welcome.js"></script>
 </body>

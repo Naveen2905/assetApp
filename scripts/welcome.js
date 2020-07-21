@@ -42,4 +42,9 @@ $(function () {
     }
 
     mainApp.logOut = logOut;
+
+    // Moment.js for date and time on the page 
+    const dateTime = moment().format('YYYY-MMMM-DD, hh:mm A');
+    
+    $('.currentDate').html(dateTime)
 });

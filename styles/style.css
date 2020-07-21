@@ -368,7 +368,6 @@ a {
 }
 
 .dashboardHeaderSection .headerContainer .photoButtonContainer .logOutButton {
-  height: 60%;
   border: none;
   background: #848c8e;
   font-size: calc(1rem + 0.5vw);
@@ -391,4 +390,68 @@ a {
 .dashboardMainSection {
   height: 90vh;
   background: #f1f2ee;
+}
+
+.dashboardMainSection .dateContainer {
+  padding: 2% 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Noto Sans KR", sans-serif;
+  color: #435058;
+}
+
+.dashboardMainSection .dateContainer .addAsset {
+  border: none;
+  background: #848c8e;
+  font-size: calc(1rem + 0.5vw);
+  color: #f1f2ee;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  margin: auto 0;
+  text-transform: capitalize;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.dashboardMainSection .dateContainer .addAsset:hover, .dashboardMainSection .dateContainer .addAsset:focus {
+  background: #bfb7b6;
+  color: #435058;
+  -webkit-box-shadow: 2px 2px 5px #848c8e;
+          box-shadow: 2px 2px 5px #848c8e;
+}
+
+.dashboardMainSection .dateContainer .searchAsset {
+  border: 1px solid #848c8e;
+  width: 40%;
+  padding: 0.5rem 1rem;
+  font-size: calc(1rem + 0.5vw);
+  border-radius: 1rem;
+  background: #f1f2ee;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.dashboardMainSection .dateContainer .searchAsset:hover, .dashboardMainSection .dateContainer .searchAsset:focus {
+  -webkit-box-shadow: 2px 2px 5px #435058;
+          box-shadow: 2px 2px 5px #435058;
+}
+
+.dashboardMainSection .dateContainer .currentDate {
+  font-size: calc(1rem + 0.5vw);
+}
+
+.dashboardMainSection .resultDashboardArea .dashboardHeading {
+  text-transform: capitalize;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: calc(1rem + 0.5vw);
+  text-align: center;
+  color: #435058;
 }
