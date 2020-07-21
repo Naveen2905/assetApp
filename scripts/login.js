@@ -28,10 +28,10 @@ $(function () {
             firebase.auth.EmailAuthProvider.PROVIDER_ID,
             // firebase.auth.PhoneAuthProvider.PROVIDER_ID
         ],
-        // Terms of service url.
-        tosUrl: 'dashboard.html',
-        // Privacy policy url.
-        privacyPolicyUrl: 'dashboard.html'
+        // // Terms of service url.
+        // tosUrl: 'dashboard.html',
+        // // Privacy policy url.
+        // privacyPolicyUrl: 'dashboard.html'
     };
 
     // The start method will wait until the DOM is loaded.

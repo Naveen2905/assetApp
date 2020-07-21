@@ -13,16 +13,23 @@ $(function () {
             photoUrl = user.photoURL;
             emailVerified = user.emailVerified;
             uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
+            placeHolderUserImage = `../assets/userImagePlaceholder.png`;
+
             // this value to authenticate with your backend server, if
             // you have one. Use User.getToken() instead.
             user.providerData.forEach(function (profile) {
-                console.log("Sign-in provider: " + profile.providerId);
+                // console.log("Sign-in provider: " + profile.providerId);
                 $('.userName').html(profile.displayName)
-                console.log("  Provider-specific UID: " + profile.uid);
-                console.log("  Name: " + profile.displayName);
-                console.log("  Email: " + profile.email);
-                console.log("  Photo URL: " + profile.photoURL);
-                $('.userPhoto').append(`<img class='image' src="${profile.photoURL}" alt="${profile.displayName} Image">`)
+                // console.log("  Provider-specific UID: " + profile.uid);
+                // console.log("  Name: " + profile.displayName);
+                // console.log("  Email: " + profile.email);
+                // console.log("  Photo URL: " + profile.photoURL);
+                if (profile.photoURL == null) {
+                    $('.userPhoto').append(`<img class='image' src="${placeHolderUserImage}" alt="${profile.displayName} Image">`)
+                }
+                else {
+                    $('.userPhoto').append(`<img class='image' src="${profile.photoURL}" alt="${profile.displayName} Image">`)
+                }
             });
         }
         else {
