@@ -373,6 +373,7 @@ a {
   cursor: pointer;
   padding: 0.5rem 1rem;
   border-radius: 1rem;
+  margin: auto 0;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
