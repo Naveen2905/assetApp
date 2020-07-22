@@ -459,3 +459,176 @@ a {
   text-align: center;
   color: #435058;
 }
+
+.addAssetHeaderSection {
+  height: 10vh;
+  background: #f1f2ee;
+}
+
+.addAssetHeaderSection .headerContainer {
+  height: 100%;
+}
+
+.addAssetHeaderSection .headerContainer .photoButtonContainer {
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.addAssetHeaderSection .headerContainer .photoButtonContainer .placeholderImage {
+  width: 2rem;
+  height: auto;
+}
+
+.addAssetHeaderSection .headerContainer .photoButtonContainer .userImage {
+  border-radius: 1rem;
+  width: 5rem;
+}
+
+.addAssetHeaderSection .headerContainer .photoButtonContainer .addAssetLogo {
+  width: 10vh;
+}
+
+.addAssetHeaderSection .headerContainer .photoButtonContainer .logOutButton {
+  border: none;
+  background: #848c8e;
+  font-size: calc(1rem + 0.5vw);
+  color: #f1f2ee;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  margin: auto 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.addAssetHeaderSection .headerContainer .photoButtonContainer .logOutButton:hover, .addAssetHeaderSection .headerContainer .photoButtonContainer .logOutButton:focus {
+  background: #bfb7b6;
+  color: #435058;
+  -webkit-box-shadow: 2px 2px 5px #848c8e;
+          box-shadow: 2px 2px 5px #848c8e;
+}
+
+.addAssetMainSection {
+  height: auto;
+  background: #f1f2ee;
+}
+
+.addAssetMainSection .dateContainer {
+  padding: 2% 0;
+  text-align: right;
+  font-family: "Noto Sans KR", sans-serif;
+  color: #435058;
+}
+
+.addAssetMainSection .dateContainer .currentDate {
+  font-size: calc(1rem + 0.5vw);
+}
+
+.addAssetMainSection .mainArea .dashboardHeading {
+  text-transform: capitalize;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: calc(1rem + 0.5vw);
+  text-align: center;
+  color: #435058;
+}
+
+.addAssetMainSection .mainArea .addAssetInfo {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: calc(1rem + 0.5vw);
+  padding: 2% 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.addAssetMainSection .mainArea .addAssetInfo li {
+  margin: 1rem 0;
+  color: #435058;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.addAssetMainSection .mainArea .addAssetInfo li label {
+  display: inline-block;
+  width: 25%;
+  text-align: right;
+  margin: auto 1%;
+}
+
+.addAssetMainSection .mainArea .addAssetInfo li input,
+.addAssetMainSection .mainArea .addAssetInfo li select {
+  background: transparent;
+  border: 1px solid #848c8e;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  width: 50%;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.addAssetMainSection .mainArea .addAssetInfo li input:hover, .addAssetMainSection .mainArea .addAssetInfo li input:focus,
+.addAssetMainSection .mainArea .addAssetInfo li select:hover,
+.addAssetMainSection .mainArea .addAssetInfo li select:focus {
+  border: 1px solid #435058;
+  -webkit-box-shadow: 2px 2px 5px #848c8e;
+          box-shadow: 2px 2px 5px #848c8e;
+}
+
+.addAssetMainSection .mainArea .addAssetInfo li input[type="number"]::-webkit-inner-spin-button,
+.addAssetMainSection .mainArea .addAssetInfo li input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  cursor: pointer;
+}
+
+.addAssetMainSection .mainArea .addAssetInfo li input[type="number"] {
+  -moz-appearance: textfield;
+  cursor: pointer;
+}
+
+.addAssetMainSection .mainArea .addAssetInfo li select,
+.addAssetMainSection .mainArea .addAssetInfo li input[type="date"] {
+  cursor: pointer;
+}
+
+.addAssetMainSection .mainArea .addAssetInfo .saveButton {
+  position: relative;
+  border: none;
+  background: #848c8e;
+  font-size: calc(1rem + 0.5vw);
+  color: #f1f2ee;
+  cursor: pointer;
+  padding: 0.5rem 1.5rem;
+  border-radius: 1rem;
+  margin: 0 auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.addAssetMainSection .mainArea .addAssetInfo .saveButton:hover {
+  background: #bfb7b6;
+  color: #435058;
+  -webkit-box-shadow: 2px 2px 5px #848c8e;
+          box-shadow: 2px 2px 5px #848c8e;
+}

@@ -1,0 +1,133 @@
+.addAssetHeaderSection {
+    height: 10vh;
+    background: #f1f2ee;
+    .headerContainer {
+        height: 100%;
+        .photoButtonContainer {
+            height: auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            .placeholderImage {
+                width: 2rem;
+                height: auto;
+            }
+            .userImage {
+                border-radius: 1rem;
+                width: 5rem;
+            }
+            .addAssetLogo {
+                width: 10vh;
+            }
+            .logOutButton {
+                // height: 60%;
+                border: none;
+                background: #848c8e;
+                font-size: calc(1rem + 0.5vw);
+                color: #f1f2ee;
+                cursor: pointer;
+                padding: 0.5rem 1rem;
+                border-radius: 1rem;
+                margin: auto 0;
+                transition: all 0.3s ease-in-out;
+                &:hover,
+                &:focus {
+                    background: #bfb7b6;
+                    color: #435058;
+                    box-shadow: 2px 2px 5px #848c8e;
+                }
+            }
+        }
+    }
+}
+
+.addAssetMainSection {
+    height: auto;
+    background: #f1f2ee;
+    .dateContainer {
+        padding: 2% 0;
+        text-align: right;
+        font-family: "Noto Sans KR", sans-serif;
+        color: #435058;
+        .currentDate {
+            font-size: calc(1rem + 0.5vw);
+        }
+    }
+    .mainArea {
+        .dashboardHeading {
+            text-transform: capitalize;
+            font-family: "Noto Sans KR", sans-serif;
+            font-size: calc(1rem + 0.5vw);
+            text-align: center;
+            color: #435058;
+        }
+        .addAssetInfo {
+            font-family: "Noto Sans KR", sans-serif;
+            font-size: calc(1rem + 0.5vw);
+            padding: 2% 0;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            li {
+                margin: 1rem 0;
+                color: #435058;
+                display: flex;
+                flex-wrap: nowrap;
+                label {
+                    display: inline-block;
+                    width: 25%;
+                    text-align: right;
+                    margin: auto 1%;
+                }
+                input,
+                select {
+                    background: transparent;
+                    border: 1px solid #848c8e;
+                    border-radius: 1rem;
+                    padding: 0.5rem 1rem;
+                    width: 50%;
+                    transition: all 0.3s ease-in-out;
+                    &:hover,
+                    &:focus {
+                        border: 1px solid #435058;
+                        box-shadow: 2px 2px 5px #848c8e;
+                    }
+                }
+                // Hide spinners of number input in chrome edge opera and safari
+                input[type="number"]::-webkit-inner-spin-button,
+                input[type="number"]::-webkit-outer-spin-button {
+                    -webkit-appearance: none;
+                    margin: 0;
+                    cursor: pointer;
+                }
+                //Hide spinners of number in input in mozilla firefox
+                input[type="number"] {
+                    -moz-appearance: textfield;
+                    cursor: pointer;
+                }
+                select,
+                input[type="date"] {
+                    cursor: pointer;
+                }
+            }
+            .saveButton {
+                position: relative;
+                border: none;
+                background: #848c8e;
+                font-size: calc(1rem + 0.5vw);
+                color: #f1f2ee;
+                cursor: pointer;
+                padding: 0.5rem 1.5rem;
+                border-radius: 1rem;
+                margin: 0 auto;
+                transition: all 0.3s ease-in-out;
+                &:hover {
+                    background: #bfb7b6;
+                    color: #435058;
+                    box-shadow: 2px 2px 5px #848c8e;
+                }
+            }
+        }
+    }
+}
