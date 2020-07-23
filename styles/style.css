@@ -604,7 +604,7 @@ a {
 .addAssetMainSection .mainArea .formContainer .addAssetInfo li label {
   display: inline-block;
   width: 25%;
-  text-align: right;
+  text-align: left;
   margin: auto 1%;
 }
 
@@ -671,6 +671,9 @@ a {
   width: 30%;
   padding: 5% 1%;
   color: #435058;
+  -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+          order: -1;
 }
 
 .addAssetMainSection .mainArea .formContainer .uploadFile label {
