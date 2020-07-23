@@ -1,10 +1,14 @@
 .addAssetHeaderSection {
-    height: 10vh;
+    height: auto;
     background: #f1f2ee;
     .headerContainer {
         height: 100%;
+        text-align: center;
+        .addAssetLogo {
+            width: 10vh;
+            margin: 0 auto;
+        }
         .photoButtonContainer {
-            height: auto;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
@@ -17,11 +21,7 @@
                 border-radius: 1rem;
                 width: 5rem;
             }
-            .addAssetLogo {
-                width: 10vh;
-            }
             .logOutButton {
-                // height: 60%;
                 border: none;
                 background: #848c8e;
                 font-size: calc(1rem + 0.5vw);
@@ -58,7 +58,7 @@
         .dashboardHeading {
             text-transform: capitalize;
             font-family: "Noto Sans KR", sans-serif;
-            font-size: calc(1rem + 0.5vw);
+            font-size: calc(1.5rem + 0.5vw);
             text-align: center;
             color: #435058;
         }
@@ -79,6 +79,9 @@
                     width: 25%;
                     text-align: right;
                     margin: auto 1%;
+                    .redRequired {
+                        color: red;
+                    }
                 }
                 input,
                 select {
@@ -86,7 +89,7 @@
                     border: 1px solid #848c8e;
                     border-radius: 1rem;
                     padding: 0.5rem 1rem;
-                    width: 50%;
+                    width: 100%;
                     transition: all 0.3s ease-in-out;
                     &:hover,
                     &:focus {
@@ -104,7 +107,6 @@
                 //Hide spinners of number in input in mozilla firefox
                 input[type="number"] {
                     -moz-appearance: textfield;
-                    cursor: pointer;
                 }
                 select,
                 input[type="date"] {
@@ -113,10 +115,9 @@
             }
             .saveButton {
                 position: relative;
-                border: none;
-                background: #848c8e;
+                border: 2px solid #848c8e;
                 font-size: calc(1rem + 0.5vw);
-                color: #f1f2ee;
+                color: #848c8e;
                 cursor: pointer;
                 padding: 0.5rem 1.5rem;
                 border-radius: 1rem;
@@ -124,7 +125,7 @@
                 transition: all 0.3s ease-in-out;
                 &:hover {
                     background: #bfb7b6;
-                    color: #435058;
+                    color: #f1f2ee;
                     box-shadow: 2px 2px 5px #848c8e;
                 }
             }

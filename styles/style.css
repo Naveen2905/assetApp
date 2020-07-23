@@ -332,6 +332,14 @@ a {
           justify-content: center;
 }
 
+.dashboardHeaderSection .headerContainer .heading {
+  text-transform: capitalize;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: calc(1.5rem + 0.5vw);
+  text-align: center;
+  color: #435058;
+}
+
 .dashboardHeaderSection .headerContainer .photoButtonContainer {
   height: auto;
   display: -webkit-box;
@@ -357,14 +365,6 @@ a {
 .dashboardHeaderSection .headerContainer .photoButtonContainer .userImage {
   border-radius: 1rem;
   width: 5rem;
-}
-
-.dashboardHeaderSection .headerContainer .photoButtonContainer .heading {
-  text-transform: capitalize;
-  font-family: "Noto Sans KR", sans-serif;
-  font-size: calc(1.5rem + 0.5vw);
-  text-align: center;
-  color: #435058;
 }
 
 .dashboardHeaderSection .headerContainer .photoButtonContainer .logOutButton {
@@ -461,16 +461,21 @@ a {
 }
 
 .addAssetHeaderSection {
-  height: 10vh;
+  height: auto;
   background: #f1f2ee;
 }
 
 .addAssetHeaderSection .headerContainer {
   height: 100%;
+  text-align: center;
+}
+
+.addAssetHeaderSection .headerContainer .addAssetLogo {
+  width: 10vh;
+  margin: 0 auto;
 }
 
 .addAssetHeaderSection .headerContainer .photoButtonContainer {
-  height: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -494,10 +499,6 @@ a {
 .addAssetHeaderSection .headerContainer .photoButtonContainer .userImage {
   border-radius: 1rem;
   width: 5rem;
-}
-
-.addAssetHeaderSection .headerContainer .photoButtonContainer .addAssetLogo {
-  width: 10vh;
 }
 
 .addAssetHeaderSection .headerContainer .photoButtonContainer .logOutButton {
@@ -539,7 +540,7 @@ a {
 .addAssetMainSection .mainArea .dashboardHeading {
   text-transform: capitalize;
   font-family: "Noto Sans KR", sans-serif;
-  font-size: calc(1rem + 0.5vw);
+  font-size: calc(1.5rem + 0.5vw);
   text-align: center;
   color: #435058;
 }
@@ -576,13 +577,17 @@ a {
   margin: auto 1%;
 }
 
+.addAssetMainSection .mainArea .addAssetInfo li label .redRequired {
+  color: red;
+}
+
 .addAssetMainSection .mainArea .addAssetInfo li input,
 .addAssetMainSection .mainArea .addAssetInfo li select {
   background: transparent;
   border: 1px solid #848c8e;
   border-radius: 1rem;
   padding: 0.5rem 1rem;
-  width: 50%;
+  width: 100%;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
@@ -604,7 +609,6 @@ a {
 
 .addAssetMainSection .mainArea .addAssetInfo li input[type="number"] {
   -moz-appearance: textfield;
-  cursor: pointer;
 }
 
 .addAssetMainSection .mainArea .addAssetInfo li select,
@@ -614,10 +618,9 @@ a {
 
 .addAssetMainSection .mainArea .addAssetInfo .saveButton {
   position: relative;
-  border: none;
-  background: #848c8e;
+  border: 2px solid #848c8e;
   font-size: calc(1rem + 0.5vw);
-  color: #f1f2ee;
+  color: #848c8e;
   cursor: pointer;
   padding: 0.5rem 1.5rem;
   border-radius: 1rem;
@@ -628,7 +631,7 @@ a {
 
 .addAssetMainSection .mainArea .addAssetInfo .saveButton:hover {
   background: #bfb7b6;
-  color: #435058;
+  color: #f1f2ee;
   -webkit-box-shadow: 2px 2px 5px #848c8e;
           box-shadow: 2px 2px 5px #848c8e;
 }
