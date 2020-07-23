@@ -393,7 +393,7 @@ a {
 }
 
 .dashboardMainSection .dateContainer {
-  padding: 2% 0;
+  padding: 1% 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -432,7 +432,18 @@ a {
   color: inherit;
 }
 
-.dashboardMainSection .dateContainer .searchAsset {
+.dashboardMainSection .dateContainer .currentDate {
+  font-size: calc(1rem + 0.5vw);
+  text-align: right;
+  width: 25%;
+}
+
+.dashboardMainSection .searchContainer {
+  text-align: center;
+  margin: 1% 0;
+}
+
+.dashboardMainSection .searchContainer .searchAsset {
   border: 1px solid #848c8e;
   width: 40%;
   padding: 0.5rem 1rem;
@@ -443,13 +454,9 @@ a {
   transition: all 0.3s ease-in-out;
 }
 
-.dashboardMainSection .dateContainer .searchAsset:hover, .dashboardMainSection .dateContainer .searchAsset:focus {
+.dashboardMainSection .searchContainer .searchAsset:hover, .dashboardMainSection .searchContainer .searchAsset:focus {
   -webkit-box-shadow: 2px 2px 5px #435058;
           box-shadow: 2px 2px 5px #435058;
-}
-
-.dashboardMainSection .dateContainer .currentDate {
-  font-size: calc(1rem + 0.5vw);
 }
 
 .dashboardMainSection .resultDashboardArea .dashboardHeading {
@@ -458,6 +465,18 @@ a {
   font-size: calc(1rem + 0.5vw);
   text-align: center;
   color: #435058;
+}
+
+@media (max-width: 768px) {
+  .dashboardMainSection .searchContainer .searchAsset {
+    width: 70%;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboardMainSection .searchContainer .searchAsset {
+    width: 70%;
+  }
 }
 
 .addAssetHeaderSection {
