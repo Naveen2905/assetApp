@@ -545,7 +545,16 @@ a {
   color: #435058;
 }
 
-.addAssetMainSection .mainArea .addAssetInfo {
+.addAssetMainSection .mainArea .formContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.addAssetMainSection .mainArea .formContainer .addAssetInfo {
+  width: 70%;
   font-family: "Noto Sans KR", sans-serif;
   font-size: calc(1rem + 0.5vw);
   padding: 2% 0;
@@ -560,7 +569,7 @@ a {
       flex-wrap: wrap;
 }
 
-.addAssetMainSection .mainArea .addAssetInfo li {
+.addAssetMainSection .mainArea .formContainer .addAssetInfo li {
   margin: 1rem 0;
   color: #435058;
   display: -webkit-box;
@@ -568,21 +577,24 @@ a {
   display: flex;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.addAssetMainSection .mainArea .addAssetInfo li label {
+.addAssetMainSection .mainArea .formContainer .addAssetInfo li label {
   display: inline-block;
   width: 25%;
   text-align: right;
   margin: auto 1%;
 }
 
-.addAssetMainSection .mainArea .addAssetInfo li label .redRequired {
+.addAssetMainSection .mainArea .formContainer .addAssetInfo li label .redRequired {
   color: red;
 }
 
-.addAssetMainSection .mainArea .addAssetInfo li input,
-.addAssetMainSection .mainArea .addAssetInfo li select {
+.addAssetMainSection .mainArea .formContainer .addAssetInfo li input,
+.addAssetMainSection .mainArea .formContainer .addAssetInfo li select {
   background: transparent;
   border: 1px solid #848c8e;
   border-radius: 1rem;
@@ -592,31 +604,31 @@ a {
   transition: all 0.3s ease-in-out;
 }
 
-.addAssetMainSection .mainArea .addAssetInfo li input:hover, .addAssetMainSection .mainArea .addAssetInfo li input:focus,
-.addAssetMainSection .mainArea .addAssetInfo li select:hover,
-.addAssetMainSection .mainArea .addAssetInfo li select:focus {
+.addAssetMainSection .mainArea .formContainer .addAssetInfo li input:hover, .addAssetMainSection .mainArea .formContainer .addAssetInfo li input:focus,
+.addAssetMainSection .mainArea .formContainer .addAssetInfo li select:hover,
+.addAssetMainSection .mainArea .formContainer .addAssetInfo li select:focus {
   border: 1px solid #435058;
   -webkit-box-shadow: 2px 2px 5px #848c8e;
           box-shadow: 2px 2px 5px #848c8e;
 }
 
-.addAssetMainSection .mainArea .addAssetInfo li input[type="number"]::-webkit-inner-spin-button,
-.addAssetMainSection .mainArea .addAssetInfo li input[type="number"]::-webkit-outer-spin-button {
+.addAssetMainSection .mainArea .formContainer .addAssetInfo li input[type="number"]::-webkit-inner-spin-button,
+.addAssetMainSection .mainArea .formContainer .addAssetInfo li input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
   cursor: pointer;
 }
 
-.addAssetMainSection .mainArea .addAssetInfo li input[type="number"] {
+.addAssetMainSection .mainArea .formContainer .addAssetInfo li input[type="number"] {
   -moz-appearance: textfield;
 }
 
-.addAssetMainSection .mainArea .addAssetInfo li select,
-.addAssetMainSection .mainArea .addAssetInfo li input[type="date"] {
+.addAssetMainSection .mainArea .formContainer .addAssetInfo li select,
+.addAssetMainSection .mainArea .formContainer .addAssetInfo li input[type="date"] {
   cursor: pointer;
 }
 
-.addAssetMainSection .mainArea .addAssetInfo .saveButton {
+.addAssetMainSection .mainArea .formContainer .addAssetInfo .saveButton {
   position: relative;
   border: 2px solid #848c8e;
   font-size: calc(1rem + 0.5vw);
@@ -629,9 +641,85 @@ a {
   transition: all 0.3s ease-in-out;
 }
 
-.addAssetMainSection .mainArea .addAssetInfo .saveButton:hover {
+.addAssetMainSection .mainArea .formContainer .addAssetInfo .saveButton:hover {
   background: #bfb7b6;
   color: #f1f2ee;
   -webkit-box-shadow: 2px 2px 5px #848c8e;
           box-shadow: 2px 2px 5px #848c8e;
+}
+
+.addAssetMainSection .mainArea .formContainer .uploadFile {
+  width: 30%;
+  padding: 5% 1%;
+  color: #435058;
+}
+
+.addAssetMainSection .mainArea .formContainer .uploadFile label {
+  width: 100%;
+  display: inline-block;
+  text-align: left;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: calc(1rem + 0.5vw);
+}
+
+.addAssetMainSection .mainArea .formContainer .uploadFile label .redRequired {
+  color: red;
+}
+
+.addAssetMainSection .mainArea .formContainer .uploadFile input[type="file"] {
+  border: none;
+  margin: 2% auto;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  height: 25%;
+  background: #bfb7b6;
+  font-size: calc(0.7rem + 0.5vw);
+  color: #435058;
+  cursor: pointer;
+  border-radius: 1rem;
+}
+
+.addAssetMainSection .mainArea .formContainer .uploadFile #filedrag {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: calc(1rem + 0.5vw);
+}
+
+.addAssetMainSection .mainArea .formContainer .uploadFile #uploader {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  width: 100%;
+  height: 2rem;
+  margin: 2% auto;
+  text-align: center;
+  border-radius: 1rem;
+}
+
+@media (max-width: 480px) {
+  .addAssetMainSection .mainArea .formContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .addAssetMainSection .mainArea .formContainer .addAssetInfo {
+    width: 100%;
+  }
+  .addAssetMainSection .mainArea .formContainer .addAssetInfo li {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .addAssetMainSection .mainArea .formContainer .addAssetInfo li label {
+    text-align: center;
+  }
+  .addAssetMainSection .mainArea .formContainer .uploadFile {
+    width: 100%;
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+  }
 }

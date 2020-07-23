@@ -33,106 +33,112 @@
         <section class="mainArea wrapper">
             <h1 class="dashboardHeading">add new asset (all fields are mandatory)</h1>
 
-            <form class="addAssetInfo">
-                <li>
-                    <label for="assetName">Asset Name <span class="redRequired">*</span> : </label>
-                    <input type="text" id="assetName" placeholder="Asset Name">
-                </li>
+            <div class="formContainer">
+                <form class="addAssetInfo">
+                    <li>
+                        <label for="assetName">Asset Name <span class="redRequired">*</span> : </label>
+                        <input type="text" id="assetName" placeholder="Asset Name">
+                    </li>
 
-                <li>
-                    <label for="category">Category <span class="redRequired">*</span> : </label>
-                    <select name="category" id="category" required>
-                        <option value="" disabled selected>--Please choose an option--</option>
-                        <option value="computers">Computers, Tablets & Accessories</option>
-                        <option value="officeSupplies">Office Supplies</option>
-                        <option value="furniture">Furniture</option>
-                        <option value="appliances">Appliances</option>
-                    </select>
-                </li>
+                    <li>
+                        <label for="category">Category <span class="redRequired">*</span> : </label>
+                        <select name="category" id="category">
+                            <option value="" disabled selected>--Please choose an option--</option>
+                            <option value="computers">Computers, Tablets & Accessories</option>
+                            <option value="officeSupplies">Office Supplies</option>
+                            <option value="furniture">Furniture</option>
+                            <option value="appliances">Appliances</option>
+                        </select>
+                    </li>
 
-                <li>
-                    <label for="assignedDate">Assigned Date <span class="redRequired">*</span> : </label>
-                    <input type="date" id="assignedDate" placeholder="Assigned Date">
-                </li>
-
-
-                <li>
-                    <label for="purchaseDate">Purchase Date <span class="redRequired">*</span> : </label>
-                    <input type="date" id="purchaseDate" placeholder="Purchase Date">
-                </li>
+                    <li>
+                        <label for="assignedDate">Assigned Date <span class="redRequired">*</span> : </label>
+                        <input type="date" id="assignedDate" placeholder="Assigned Date">
+                    </li>
 
 
-                <li>
-                    <label for="location">Location <span class="redRequired">*</span> : </label>
-                    <input type="text" id="location" placeholder="Location">
-                </li>
+                    <li>
+                        <label for="purchaseDate">Purchase Date <span class="redRequired">*</span> : </label>
+                        <input type="date" id="purchaseDate" placeholder="Purchase Date">
+                    </li>
 
 
-                <li>
-                    <label for="price">Price <span class="redRequired">*</span> : </label>
-                    <input type="number" id="price" placeholder="Price of an Asset">
-                </li>
+                    <li>
+                        <label for="location">Location <span class="redRequired">*</span> : </label>
+                        <input type="text" id="location" placeholder="Location">
+                    </li>
 
 
-                <li>
-                    <label for="condition">Condition <span class="redRequired">*</span> : </label>
-                    <select name="condition" id="condition" required>
-                        <option value="" disabled selected>--Please choose an option--</option>
-                        <option value="new">New</option>
-                        <option value="used">Used</option>
-                    </select>
-                </li>
+                    <li>
+                        <label for="price">Price <span class="redRequired">*</span> : </label>
+                        <input type="number" id="price" placeholder="Price of an Asset">
+                    </li>
 
 
-                <li>
-                    <label for="warrantyInfo">Warranty / Purchase Info. <span class="redRequired">*</span> : </label>
-                    <input type="text" id="warrantyInfo" placeholder="Warranty / Purchase Info.">
-                </li>
+                    <li>
+                        <label for="condition">Condition <span class="redRequired">*</span> : </label>
+                        <select name="condition" id="condition">
+                            <option value="" disabled selected>--Please choose an option--</option>
+                            <option value="new">New</option>
+                            <option value="used">Used</option>
+                        </select>
+                    </li>
 
 
-                <li>
-                    <label for="returnedDate">Returned Date <span class="redRequired">*</span> : </label>
-                    <input type="date" id="returnedDate" placeholder="Returned Date">
-                </li>
+                    <li>
+                        <label for="warrantyInfo">Warranty / Purchase Info. <span class="redRequired">*</span> :
+                        </label>
+                        <input type="text" id="warrantyInfo" placeholder="Warranty / Purchase Info.">
+                    </li>
 
 
-                <li>
+                    <li>
+                        <label for="returnedDate">Returned Date <span class="redRequired">*</span> : </label>
+                        <input type="date" id="returnedDate" placeholder="Returned Date">
+                    </li>
+
+
+
+
+                    <li>
+                        <label for="expiryDate">Expiration Date <span class="redRequired">*</span> : </label>
+                        <input type="date" id="expiryDate" placeholder="Expiration Date">
+                    </li>
+
+
+                    <li>
+                        <label for="additionalInfo">Additional Info. <span class="redRequired">*</span> : </label>
+                        <input type="text" id="additionalInfo" placeholder="Additional Info.">
+                    </li>
+
+
+                    <li>
+                        <label for="status">Status <span class="redRequired">*</span> : </label>
+                        <input type="text" id="status" placeholder="Status">
+                    </li>
+
+                    <li>
+                        <label for="modelNumber">Model Number <span class="redRequired">*</span> : </label>
+                        <input type="number" id="modelNumber" placeholder="Model Number">
+                    </li>
+
+
+                    <li>
+                        <label for="serialNumber">Serial Number <span class="redRequired">*</span> : </label>
+                        <input type="number" id="serialNumber" placeholder="Serial Number">
+                    </li>
+
+                    <button class="saveButton" type="submit">Save</button>
+
+                </form>
+                <div class="uploadFile">
                     <label for="recieptUpload">Reciept Upload <span class="redRequired">*</span> : </label>
                     <!-- Reciept Upload  -->
-                </li>
-
-
-                <li>
-                    <label for="expiryDate">Expiration Date <span class="redRequired">*</span> : </label>
-                    <input type="date" id="expiryDate" placeholder="Expiration Date">
-                </li>
-
-
-                <li>
-                    <label for="additionalInfo">Additional Info. <span class="redRequired">*</span> : </label>
-                    <input type="text" id="additionalInfo" placeholder="Additional Info.">
-                </li>
-
-
-                <li>
-                    <label for="status">Status <span class="redRequired">*</span> : </label>
-                    <input type="text" id="status" placeholder="Status">
-                </li>
-
-                <li>
-                    <label for="modelNumber">Model Number <span class="redRequired">*</span> : </label>
-                    <input type="number" id="modelNumber" placeholder="Model Number">
-                </li>
-
-
-                <li>
-                    <label for="serialNumber">Serial Number <span class="redRequired">*</span> : </label>
-                    <input type="number" id="serialNumber" placeholder="Serial Number">
-                </li>
-
-                <button class="saveButton" type="submit">Save</button>
-
-            </form>
+                    <input type="file" id="fileButton" value="upload">
+                    <div id="filedrag">or drop files above...</div>
+                    <progress id="uploader" value="0" max="100">0%</progress>
+                </div>
+            </div>
         </section>
     </main>
 
@@ -141,6 +147,7 @@
     <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-storage.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment-with-locales.min.js"></script>
     <script src="./scripts/firebase.js"></script>
     <script src="./scripts/welcome.js"></script>
