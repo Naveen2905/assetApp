@@ -1,7 +1,5 @@
 $(function () {
 
-
-
     $('.addAssetInfo').on('submit', function (e) {
         e.preventDefault();
         const assetName = $('#assetName').val();
@@ -18,7 +16,7 @@ $(function () {
         const status = $('#status').val();
         const modelNumber = $('#modelNumber').val();
         const serialNumber = $('#serialNumber').val();
-
+        const recieptUrl  = $('.recieptImage').attr('src');
         // Firebase Realtime Database --------------------------- 
         const dbRef = firebase.database().ref();
 
@@ -38,13 +36,18 @@ $(function () {
             assetStatus: status,
             modelNumber: modelNumber,
             serialNumber: serialNumber,
+            recieptUrl : recieptUrl,
         }
 
         // Pushed to firebase db 
-        const firebaseObj = dbRef.push(assetInformation);
+        const firebaseObj = dbRef.push(assetInformation , function() {
+            swal("Saved!!", "Information saved successfully!", "success");
+            $("html, body").animate({ scrollTop: 0 }, "slow");
+        });
 
         //To Reset the form fields
         $('input[type=text],input[type=number],input[type=date],select').val('');
+        $('.recieptImage').attr('src','');
 
         dbRef.on('value', (data) => {
             console.log(data.val());
@@ -53,7 +56,7 @@ $(function () {
     })
 
     // Firebase Storage ------------------
-
+    let imgUrl;
     const uploader = $('#uploader');
     const fileButton = $('#fileButton');
     //Listen for file selection
@@ -65,7 +68,6 @@ $(function () {
         const storageRef = firebase.storage().ref('reciepts/' + file.name)
         // Upload File
         const task = storageRef.put(file);
-        
         //Update Progress Bar
         task.on('state_changed',
 
@@ -81,13 +83,20 @@ $(function () {
 
             function complete() {
                 //After uploading finishes it will reset the input
-                fileButton.val(''); 
+                fileButton.val('');
                 uploader[0].value = 0;
                 $('#filedrag').text('Success!!');
+
+                //Download File
+                var firebaseRef = firebase.storage()
+                var newRef = firebaseRef.ref();
+                newRef.child('reciepts/' + file.name).getDownloadURL().then(function (url) {
+                    // console.log(url);
+                    $(".recieptImage").attr("src", url);
+                })
             }
         )
 
     })
-
 
 });

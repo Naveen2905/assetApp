@@ -588,6 +588,11 @@ a {
       flex-wrap: wrap;
 }
 
+.addAssetMainSection .mainArea .formContainer .addAssetInfo .recieptImg {
+  width: 20%;
+  margin: 0 auto;
+}
+
 .addAssetMainSection .mainArea .formContainer .addAssetInfo li {
   margin: 1rem 0;
   color: #435058;

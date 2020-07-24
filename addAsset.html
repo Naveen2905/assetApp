@@ -35,6 +35,9 @@
 
             <div class="formContainer">
                 <form class="addAssetInfo">
+                    <li class="recieptImg">
+                        <img src="" class="recieptImage" alt="Reciept Image">
+                    </li>
                     <li>
                         <label for="assetName">Asset Name <span class="redRequired">*</span> : </label>
                         <input type="text" id="assetName" placeholder="Asset Name">
@@ -84,21 +87,16 @@
                         </select>
                     </li>
 
-
                     <li>
                         <label for="warrantyInfo">Warranty / Purchase Info. <span class="redRequired">*</span> :
                         </label>
                         <input type="text" id="warrantyInfo" placeholder="Warranty / Purchase Info.">
                     </li>
 
-
                     <li>
                         <label for="returnedDate">Returned Date <span class="redRequired">*</span> : </label>
                         <input type="date" id="returnedDate" placeholder="Returned Date">
                     </li>
-
-
-
 
                     <li>
                         <label for="expiryDate">Expiration Date <span class="redRequired">*</span> : </label>
@@ -149,6 +147,7 @@
     <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-storage.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment-with-locales.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="./scripts/firebase.js"></script>
     <script src="./scripts/welcome.js"></script>
     <script src="./scripts/addAsset.js"></script>
