@@ -313,9 +313,12 @@ a {
           box-shadow: 5px 2px 10px #435058;
 }
 
+body {
+  background: #f1f2ee;
+}
+
 .dashboardHeaderSection {
   height: 10vh;
-  background: #f1f2ee;
 }
 
 .dashboardHeaderSection .headerContainer {
@@ -459,12 +462,45 @@ a {
           box-shadow: 2px 2px 5px #435058;
 }
 
+.dashboardMainSection .resultDashboardArea {
+  height: 100%;
+}
+
 .dashboardMainSection .resultDashboardArea .dashboardHeading {
   text-transform: capitalize;
   font-family: "Noto Sans KR", sans-serif;
   font-size: calc(1rem + 0.5vw);
   text-align: center;
   color: #435058;
+}
+
+.dashboardMainSection .resultDashboardArea .gridContainer {
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[10];
+      grid-template-columns: repeat(10, 1fr);
+  grid-gap: 1rem;
+}
+
+.dashboardMainSection .resultDashboardArea .gridContainer .item {
+  border: 1px solid #435058;
+  padding: 5% 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.dashboardMainSection .resultDashboardArea .gridContainer .item h2 {
+  font-family: "Noto Sans KR", sans-serif;
+  color: #435058;
+  font-size: calc(1rem + 0.5vw);
+  text-align: center;
+  text-transform: capitalize;
 }
 
 @media (max-width: 768px) {
@@ -547,9 +583,33 @@ a {
 
 .addAssetMainSection .dateContainer {
   padding: 2% 0;
-  text-align: right;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   font-family: "Noto Sans KR", sans-serif;
   color: #435058;
+}
+
+.addAssetMainSection .dateContainer .dashboardLink {
+  font-size: calc(1rem + 0.5vw);
+  color: inherit;
+  text-transform: capitalize;
+  border: 1px solid #848c8e;
+  border-radius: 1rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.addAssetMainSection .dateContainer .dashboardLink:hover, .addAssetMainSection .dateContainer .dashboardLink:focus {
+  background: #bfb7b6;
+  color: #f1f2ee;
+  -webkit-box-shadow: 2px 2px 5px #848c8e;
+          box-shadow: 2px 2px 5px #848c8e;
 }
 
 .addAssetMainSection .dateContainer .currentDate {

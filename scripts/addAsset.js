@@ -16,7 +16,7 @@ $(function () {
         const status = $('#status').val();
         const modelNumber = $('#modelNumber').val();
         const serialNumber = $('#serialNumber').val();
-        const recieptUrl  = $('.recieptImage').attr('src');
+        const recieptUrl = $('.recieptImage').attr('src');
         // Firebase Realtime Database --------------------------- 
         const dbRef = firebase.database().ref();
 
@@ -27,7 +27,7 @@ $(function () {
             assignedDate: assignedDate,
             purchaseDate: purchaseDate,
             assetLocation: location,
-            assetPrice: price,
+            assetPrice: `$${price}`,
             assetCondition: condition,
             warrantyInfo: warrantyInfo,
             returnedDate: returnedDate,
@@ -36,21 +36,32 @@ $(function () {
             assetStatus: status,
             modelNumber: modelNumber,
             serialNumber: serialNumber,
-            recieptUrl : recieptUrl,
+            recieptUrl: recieptUrl,
         }
 
         // Pushed to firebase db 
-        const firebaseObj = dbRef.push(assetInformation , function() {
+        const firebaseObj = dbRef.push(assetInformation, function () {
             swal("Saved!!", "Information saved successfully!", "success");
             $("html, body").animate({ scrollTop: 0 }, "slow");
         });
 
         //To Reset the form fields
         $('input[type=text],input[type=number],input[type=date],select').val('');
-        $('.recieptImage').attr('src','');
+        $('.recieptImage').attr('src', '');
 
+    
         dbRef.on('value', (data) => {
-            console.log(data.val());
+            const dataInfo = data.val();
+            //Individual Data points by looping through the firebase db object
+            const assetNameArray = [];
+
+            for (key in dataInfo) {
+                const individualDataInfo = dataInfo[key];
+                assetNameArray.push(`<p>${individualDataInfo.assetName}</p>`);
+
+            }
+            // $('.test').html(assetNameArray)
+            console.log(assetNameArray);
         });
 
     })

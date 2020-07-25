@@ -27,6 +27,7 @@
 
     <main class="addAssetMainSection">
         <section class="dateContainer wrapper">
+            <a href="./dashboard.html" class="dashboardLink">dashboard</a>
             <div class="currentDate"></div>
         </section>
 
@@ -112,7 +113,13 @@
 
                     <li>
                         <label for="status">Status <span class="redRequired">*</span> : </label>
-                        <input type="text" id="status" placeholder="Status">
+                        <!-- <input type="text" id="status" placeholder="Status"> -->
+                        <select name="assetStatus" id="status">
+                            <option value="" disabled selected>--Please choose an option--</option>
+                            <option value="avalaible">Available</option>
+                            <option value="In use">In Use</option>
+                            <option value="Re sell">Re Sell</option>
+                        </select>
                     </li>
 
                     <li>

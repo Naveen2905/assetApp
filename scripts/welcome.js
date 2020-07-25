@@ -18,12 +18,8 @@ $(function () {
             // this value to authenticate with your backend server, if
             // you have one. Use User.getToken() instead.
             user.providerData.forEach(function (profile) {
-                // console.log("Sign-in provider: " + profile.providerId);
                 $('.userName').html(profile.displayName)
-                // console.log("  Provider-specific UID: " + profile.uid);
-                // console.log("  Name: " + profile.displayName);
-                // console.log("  Email: " + profile.email);
-                // console.log("  Photo URL: " + profile.photoURL);
+
                 if (profile.photoURL == null) {
                     $('.userPhoto').append(`<img class='placeholderImage' src="${placeHolderUserImage}" alt="${profile.displayName} Image">`)
                 }
@@ -45,6 +41,6 @@ $(function () {
 
     // Moment.js for date and time on the page 
     const dateTime = moment().format('YYYY-MMMM-DD, hh:mm A');
-    
+
     $('.currentDate').html(dateTime)
 });
