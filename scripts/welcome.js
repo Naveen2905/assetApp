@@ -2,7 +2,7 @@ var mainApp = {}
 
 $(function () {
     var firebase = app_firebase;
-    var uid = null
+    var uid = null;
     firebase.auth().onAuthStateChanged(function (user) {
         var user = firebase.auth().currentUser;
         var name, email, photoUrl, uid, emailVerified;
@@ -27,6 +27,7 @@ $(function () {
                     $('.userPhoto').append(`<img class='userImage' src="${profile.photoURL}" alt="${profile.displayName} Image">`)
                 }
             });
+
         }
         else {
             uid = null
@@ -43,4 +44,60 @@ $(function () {
     const dateTime = moment().format('YYYY-MMMM-DD, hh:mm A');
 
     $('.currentDate').html(dateTime)
+
+    const dbRef = firebase.database().ref();
+    dbRef.on('value', (data) => {
+        const dataInfo = data.val();
+        // console.log(dataInfo);
+        //Individual Data points by looping through the firebase db object
+        const assetNameArray = [];
+        const categoryArray = [];
+        const assignedDateArray = [];
+        const assignedToArray = [];
+        const priceArray = [];
+        const locationArray = [];
+        const conditionArray = [];
+        const viewDetailsArray = []; //ToDo ------------------------
+        const statusArray = [];
+
+        for (key in dataInfo) {
+            const individualDataInfo = dataInfo[key];
+            // console.log(key);
+            // console.log(individualDataInfo);
+            assetNameArray.push(`<p><span>&#9632</span> ${individualDataInfo.assetName}</p>`);
+            categoryArray.push(`<p>${individualDataInfo.category}</p>`);
+            assignedDateArray.push(`<p>${individualDataInfo.assignedDate}</p>`);
+            assignedToArray.push(`<p>${individualDataInfo.assignedTo}</p>`);
+            priceArray.push(`<p>${individualDataInfo.assetPrice}</p>`);
+            locationArray.push(`<p>${individualDataInfo.assetLocation}</p>`);
+            conditionArray.push(`<p>${individualDataInfo.assetCondition}</p>`);
+            statusArray.push(`<p>${individualDataInfo.assetStatus}</p>`);
+            viewDetailsArray.push(`<a name=${key}>View Details</a>`)
+        }
+
+        $('.assetData').html(assetNameArray);
+        $('.categoryData').html(categoryArray);
+        $('.assignedDateData').html(assignedDateArray);
+        $('.assignedToData').html(assignedToArray);
+        $('.priceData').html(priceArray);
+        $('.locationData').html(locationArray);
+        $('.conditionData').html(conditionArray);
+        $('.statusData').html(statusArray);
+        $('.viewDetailsData').html(viewDetailsArray);
+
+
+
+        $('.viewDetailsData').on('click', 'a', function () {
+            console.log(this.name); //returns unique key
+            const clickedButton = this.name;
+
+            for (k in dataInfo) {
+                if (clickedButton == k) {
+                    const clickedViewedDetail = dataInfo[k];
+                    console.log(clickedViewedDetail);
+                    
+                }
+            }
+        });
+    });
 });

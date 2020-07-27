@@ -120,7 +120,8 @@ body {
             height: 100%;
             display: grid;
             grid-template-columns: repeat(10, 1fr);
-            grid-gap: 1rem;
+            grid-auto-rows: minmax(100px, auto);
+            grid-gap: 0.2rem;
             .item {
                 border: 1px solid #435058; //temporary
                 padding: 5% 0;
@@ -132,6 +133,31 @@ body {
                     font-size: calc(1rem + 0.5vw);
                     text-align: center;
                     text-transform: capitalize;
+                    height: 10%;
+                }
+                div {
+                    height: 100%;
+                    font-family: "Noto Sans KR", sans-serif;
+                    color: #435058;
+                    font-size: calc(0.7rem + 0.5vw);
+                    display: grid;
+                    grid-auto-rows: 15%;
+                    p {
+                        margin: auto 0;
+                        padding: 5%;
+                        text-transform: capitalize;
+                        span {
+                            font-size: calc(1.5rem);
+                            text-align: center;
+                        }
+                    }
+                    a {
+                        margin: auto;
+                        color: inherit;
+                        padding: 4% 5%;
+                        border: 1px solid #435058;
+                        cursor: pointer;
+                    }
                 }
             }
         }

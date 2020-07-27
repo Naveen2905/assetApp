@@ -60,6 +60,10 @@
                         <input type="date" id="assignedDate" placeholder="Assigned Date">
                     </li>
 
+                    <li>
+                        <label for="assignedTo">Assigned To <span class="redRequired">*</span> : </label>
+                        <input type="text" id="assignedTo" placeholder="Assigned To">
+                    </li>
 
                     <li>
                         <label for="purchaseDate">Purchase Date <span class="redRequired">*</span> : </label>
@@ -124,7 +128,7 @@
 
                     <li>
                         <label for="modelNumber">Model Number <span class="redRequired">*</span> : </label>
-                        <input type="number" id="modelNumber" placeholder="Model Number">
+                        <input type="text" id="modelNumber" placeholder="Model Number">
                     </li>
 
 
@@ -141,6 +145,7 @@
                     <!-- Reciept Upload  -->
                     <input type="file" id="fileButton" value="upload">
                     <div id="filedrag">or drop files above...</div>
+                    <div class="successUpload">Uploaded Successfully !!</div>
                     <progress id="uploader" value="0" max="100">0%</progress>
                 </div>
             </div>

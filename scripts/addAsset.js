@@ -5,6 +5,7 @@ $(function () {
         const assetName = $('#assetName').val();
         const assetCategory = $('#category').val();
         const assignedDate = $('#assignedDate').val();
+        const assignedTo = $('#assignedTo').val();
         const purchaseDate = $('#purchaseDate').val();
         const location = $('#location').val();
         const price = $('#price').val();
@@ -23,8 +24,9 @@ $(function () {
         // creating object to push to database 
         const assetInformation = {
             assetName: assetName,
-            category: assetCategory,
+            category : assetCategory,
             assignedDate: assignedDate,
+            assignedTo : assignedTo,
             purchaseDate: purchaseDate,
             assetLocation: location,
             assetPrice: `$${price}`,
@@ -38,7 +40,6 @@ $(function () {
             serialNumber: serialNumber,
             recieptUrl: recieptUrl,
         }
-
         // Pushed to firebase db 
         const firebaseObj = dbRef.push(assetInformation, function () {
             swal("Saved!!", "Information saved successfully!", "success");
@@ -49,20 +50,8 @@ $(function () {
         $('input[type=text],input[type=number],input[type=date],select').val('');
         $('.recieptImage').attr('src', '');
 
-    
-        dbRef.on('value', (data) => {
-            const dataInfo = data.val();
-            //Individual Data points by looping through the firebase db object
-            const assetNameArray = [];
 
-            for (key in dataInfo) {
-                const individualDataInfo = dataInfo[key];
-                assetNameArray.push(`<p>${individualDataInfo.assetName}</p>`);
-
-            }
-            // $('.test').html(assetNameArray)
-            console.log(assetNameArray);
-        });
+        // Get data from firebase code is in welcome js file.....
 
     })
 
@@ -96,9 +85,14 @@ $(function () {
                 //After uploading finishes it will reset the input
                 fileButton.val('');
                 uploader[0].value = 0;
-                $('#filedrag').text('Success!!');
 
-                //Download File
+                $('.successUpload').css('display', 'block');
+                //Hide Success Message after 3 secs
+                setTimeout(function () {
+                    $('.successUpload').css('display', 'none');
+                }, 3000)
+
+                //Get ImageUrl
                 var firebaseRef = firebase.storage()
                 var newRef = firebaseRef.ref();
                 newRef.child('reciepts/' + file.name).getDownloadURL().then(function (url) {
