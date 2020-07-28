@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>View Details - Asset Tracking App</title>
+</head>
+
+<body>
+    <header class="dashboardHeaderSection">
+        <section class="wrapper headerContainer">
+            <h1 class="heading">welcome to detail page <span class="userName"></span></h1>
+            <div class="photoButtonContainer">
+                <div class="userPhoto">
+                    <!-- User Image -->
+                </div>
+
+                <button class="logOutButton" onclick="mainApp.logOut()">Log Out</button>
+            </div>
+        </section>
+    </header>
+
+    <main class="viewDetailSection">
+
+        <section class="dateContainer wrapper">
+            <button class="addAsset">
+                <a href="./dashboard.html">dashboard</a>
+            </button>
+            <div class="currentDate"></div>
+        </section>
+        
+        <h1 class="viewDetailHeading">details</h1>
+        <section class="wrapper detailArea">
+            <ul class="detailedResult">
+                
+            </ul>
+
+            <div class="itemImage">
+                <img src="" alt="">
+            </div>
+        </section>
+    </main>
+
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment-with-locales.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-database.js"></script>
+    <script src="./scripts/firebase.js"></script>
+    <script src="./scripts/addAsset.js"></script>
+    <script src="./scripts/welcome.js"></script>
+    <script src="./scripts/viewDetail.js"></script>
+</body>
+
+</html>

@@ -96,7 +96,6 @@ $(function () {
                 var firebaseRef = firebase.storage()
                 var newRef = firebaseRef.ref();
                 newRef.child('reciepts/' + file.name).getDownloadURL().then(function (url) {
-                    // console.log(url);
                     $(".recieptImage").attr("src", url);
                 })
             }

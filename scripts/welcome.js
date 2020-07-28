@@ -48,7 +48,6 @@ $(function () {
     const dbRef = firebase.database().ref();
     dbRef.on('value', (data) => {
         const dataInfo = data.val();
-        // console.log(dataInfo);
         //Individual Data points by looping through the firebase db object
         const assetNameArray = [];
         const categoryArray = [];
@@ -72,7 +71,7 @@ $(function () {
             locationArray.push(`<p>${individualDataInfo.assetLocation}</p>`);
             conditionArray.push(`<p>${individualDataInfo.assetCondition}</p>`);
             statusArray.push(`<p>${individualDataInfo.assetStatus}</p>`);
-            viewDetailsArray.push(`<a name=${key}>View Details</a>`)
+            viewDetailsArray.push(`<form action="./viewDetails.html"><input type='submit' value='View Details' name=${key}></form>`)
         }
 
         $('.assetData').html(assetNameArray);
@@ -86,16 +85,18 @@ $(function () {
         $('.viewDetailsData').html(viewDetailsArray);
 
 
-
-        $('.viewDetailsData').on('click', 'a', function () {
+        $('.viewDetailsData').on('click', 'input', function () {
             console.log(this.name); //returns unique key
             const clickedButton = this.name;
 
             for (k in dataInfo) {
                 if (clickedButton == k) {
                     const clickedViewedDetail = dataInfo[k];
-                    console.log(clickedViewedDetail);
+                    // console.log(clickedViewedDetail);
+                    var myData = JSON.stringify(clickedViewedDetail);
+                    window.localStorage.setItem('clickedViewedDetail', myData);
                     
+
                 }
             }
         });
