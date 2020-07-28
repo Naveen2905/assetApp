@@ -207,11 +207,20 @@ body {
                 grid-template-columns: repeat(5, 1fr);
                 .assignedDate, .price, .status, .condition {
                     display: none;
+                    
+                }
+                .item {
                     h2 {
                         height: 5%;
                     }
                     div {
                         grid-auto-rows: 10%;
+                        align-items: center;
+                        margin-top: 40%;
+                        p {
+                            margin: 10% 0;
+                            padding: 0;
+                        }
                     }
                 }
                 .viewDetails {

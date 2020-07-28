@@ -564,11 +564,19 @@ body {
   .dashboardMainSection .resultDashboardArea .gridContainer .assignedDate, .dashboardMainSection .resultDashboardArea .gridContainer .price, .dashboardMainSection .resultDashboardArea .gridContainer .status, .dashboardMainSection .resultDashboardArea .gridContainer .condition {
     display: none;
   }
-  .dashboardMainSection .resultDashboardArea .gridContainer .assignedDate h2, .dashboardMainSection .resultDashboardArea .gridContainer .price h2, .dashboardMainSection .resultDashboardArea .gridContainer .status h2, .dashboardMainSection .resultDashboardArea .gridContainer .condition h2 {
+  .dashboardMainSection .resultDashboardArea .gridContainer .item h2 {
     height: 5%;
   }
-  .dashboardMainSection .resultDashboardArea .gridContainer .assignedDate div, .dashboardMainSection .resultDashboardArea .gridContainer .price div, .dashboardMainSection .resultDashboardArea .gridContainer .status div, .dashboardMainSection .resultDashboardArea .gridContainer .condition div {
+  .dashboardMainSection .resultDashboardArea .gridContainer .item div {
     grid-auto-rows: 10%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 40%;
+  }
+  .dashboardMainSection .resultDashboardArea .gridContainer .item div p {
+    margin: 10% 0;
+    padding: 0;
   }
   .dashboardMainSection .resultDashboardArea .gridContainer .viewDetails .viewDetailsData form input[type='submit'] {
     width: 100%;
