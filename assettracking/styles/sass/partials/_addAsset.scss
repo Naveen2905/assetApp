@@ -1,0 +1,241 @@
+.addAssetHeaderSection {
+    height: auto;
+    background: #f1f2ee;
+    .headerContainer {
+        height: 100%;
+        text-align: center;
+        .addAssetLogo {
+            width: 10vh;
+            margin: 0 auto;
+        }
+        .photoButtonContainer {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            .placeholderImage {
+                width: 2rem;
+                height: auto;
+            }
+            .userImage {
+                border-radius: 1rem;
+                width: 5rem;
+            }
+            .logOutButton {
+                border: none;
+                background: #848c8e;
+                font-size: calc(1rem + 0.5vw);
+                color: #f1f2ee;
+                cursor: pointer;
+                padding: 0.5rem 1rem;
+                border-radius: 1rem;
+                margin: auto 0;
+                transition: all 0.3s ease-in-out;
+                &:hover,
+                &:focus {
+                    background: #bfb7b6;
+                    color: #435058;
+                    box-shadow: 2px 2px 5px #848c8e;
+                }
+            }
+        }
+    }
+}
+
+.addAssetMainSection {
+    height: auto;
+    background: #f1f2ee;
+    .dateContainer {
+        padding: 2% 0;
+        display: flex;
+        justify-content: space-between;
+        font-family: "Noto Sans KR", sans-serif;
+        color: #435058;
+        .dashboardLink {
+            font-size: calc(1rem + 0.5vw);
+            color: inherit;
+            text-transform: capitalize;
+            border: 1px solid #848c8e;
+            border-radius: 1rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease-in-out;
+            &:hover,
+            &:focus {
+                background: #bfb7b6;
+                color: #f1f2ee;
+                box-shadow: 2px 2px 5px #848c8e;
+            }
+        }
+        .currentDate {
+            font-size: calc(1rem + 0.5vw);
+        }
+    }
+    .mainArea {
+        .dashboardHeading {
+            text-transform: capitalize;
+            font-family: "Noto Sans KR", sans-serif;
+            font-size: calc(1.5rem + 0.5vw);
+            text-align: center;
+            color: #435058;
+        }
+        .formContainer {
+            display: flex;
+            flex-wrap: nowrap;
+            .addAssetInfo {
+                width: 70%;
+                font-family: "Noto Sans KR", sans-serif;
+                font-size: calc(1rem + 0.5vw);
+                padding: 2% 0;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                .recieptImg {
+                    width: 20%;
+                    margin: 0 auto;
+                }
+                li {
+                    margin: 1rem 0;
+                    color: #435058;
+                    display: flex;
+                    flex-wrap: nowrap;
+                    align-items: center;
+                    label {
+                        display: inline-block;
+                        width: 25%;
+                        text-align: left;
+                        margin: auto 1%;
+                        .redRequired {
+                            color: red;
+                        }
+                    }
+                    input,
+                    select {
+                        background: transparent;
+                        border: 1px solid #848c8e;
+                        border-radius: 1rem;
+                        padding: 0.5rem 1rem;
+                        width: 100%;
+                        transition: all 0.3s ease-in-out;
+                        &:hover,
+                        &:focus {
+                            border: 1px solid #435058;
+                            box-shadow: 2px 2px 5px #848c8e;
+                        }
+                    }
+                    // Hide spinners of number input in chrome edge opera and safari
+                    input[type="number"]::-webkit-inner-spin-button,
+                    input[type="number"]::-webkit-outer-spin-button {
+                        -webkit-appearance: none;
+                        margin: 0;
+                        cursor: pointer;
+                    }
+                    //Hide spinners of number in input in mozilla firefox
+                    input[type="number"] {
+                        -moz-appearance: textfield;
+                    }
+                    select,
+                    input[type="date"] {
+                        cursor: pointer;
+                    }
+                }
+                .saveButton {
+                    position: relative;
+                    border: 2px solid #848c8e;
+                    font-size: calc(1rem + 0.5vw);
+                    color: #848c8e;
+                    cursor: pointer;
+                    padding: 0.5rem 1.5rem;
+                    border-radius: 1rem;
+                    margin: 0 auto;
+                    transition: all 0.3s ease-in-out;
+                    &:hover {
+                        background: #bfb7b6;
+                        color: #f1f2ee;
+                        box-shadow: 2px 2px 5px #848c8e;
+                    }
+                }
+            }
+            .uploadFile {
+                width: 30%;
+                padding: 5% 1%;
+                color: #435058;
+                order: -1;
+                label {
+                    width: 100%;
+                    display: inline-block;
+                    text-align: left;
+                    font-family: "Noto Sans KR", sans-serif;
+                    font-size: calc(1rem + 0.5vw);
+                    .redRequired {
+                        color: red;
+                    }
+                }
+                input[type="file"] {
+                    border: none;
+                    margin: 2% auto;
+                    padding: 0.5rem 1rem;
+                    width: 100%;
+                    height: 25%;
+                    background: #bfb7b6;
+                    font-size: calc(0.7rem + 0.5vw);
+                    color: #435058;
+                    cursor: pointer;
+                    border-radius: 1rem;
+                }
+                #filedrag {
+                    font-family: "Noto Sans KR", sans-serif;
+                    font-size: calc(1rem + 0.5vw);
+                }
+                .successUpload{
+                    background: #DCF763;
+                    color: #435058;
+                    padding: 1%;
+                    font-family: "Noto Sans KR", sans-serif;
+                    font-size: calc(1rem + 0.5vw);
+                    display: none;
+                }
+                #uploader {
+                    -webkit-appearance: none;
+                    appearance: none;
+                    width: 100%;
+                    height: 2rem;
+                    margin: 2% auto;
+                    text-align: center;
+                    border-radius: 1rem;
+                }
+            }
+        }
+    }
+}
+
+// Media Queries for Tablets and Mobile Phones
+//For Tablets
+// @media (max-width: 768px) {
+
+// }
+
+//For Mobile Phones
+@media (max-width: 480px) {
+    .addAssetMainSection {
+        .mainArea {
+            .formContainer {
+                display: flex;
+                flex-direction: column;
+                .addAssetInfo {
+                    width: 100%;
+                    li {
+                        align-items: center;
+                        label {
+                            text-align: center;
+                        }
+                    }
+                }
+                .uploadFile {
+                    width: 100%;
+                    order: -1;
+                }
+            }
+        }
+    }
+}

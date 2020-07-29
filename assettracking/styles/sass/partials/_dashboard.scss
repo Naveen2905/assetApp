@@ -1,0 +1,239 @@
+body {
+    background: #f1f2ee;
+}
+.dashboardHeaderSection {
+    height: 10vh;
+    // background: #f1f2ee;
+    .headerContainer {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .heading {
+            text-transform: capitalize;
+            font-family: "Noto Sans KR", sans-serif;
+            font-size: calc(1.5rem + 0.5vw);
+            text-align: center;
+            color: #435058;
+        }
+        .photoButtonContainer {
+            height: auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            .placeholderImage {
+                width: 2rem;
+                height: auto;
+            }
+            .userImage {
+                border-radius: 1rem;
+                width: 5rem;
+            }
+            .logOutButton {
+                border: none;
+                background: #848c8e;
+                font-size: calc(1rem + 0.5vw);
+                color: #f1f2ee;
+                cursor: pointer;
+                padding: 0.5rem 1rem;
+                border-radius: 1rem;
+                margin: auto 0;
+                transition: all 0.3s ease-in-out;
+                &:hover,
+                &:focus {
+                    background: #bfb7b6;
+                    color: #435058;
+                    box-shadow: 2px 2px 5px #848c8e;
+                }
+            }
+        }
+    }
+}
+.dashboardMainSection {
+    height: 90vh;
+    background: #f1f2ee;
+    .dateContainer {
+        padding: 1% 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: "Noto Sans KR", sans-serif;
+        color: #435058;
+        .addAsset {
+            // height: 60%;
+            border: none;
+            background: #848c8e;
+            font-size: calc(1rem + 0.5vw);
+            color: #f1f2ee;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 1rem;
+            margin: auto 0;
+            text-transform: capitalize;
+            transition: all 0.3s ease-in-out;
+            &:hover,
+            &:focus {
+                background: #bfb7b6;
+                color: #435058;
+                box-shadow: 2px 2px 5px #848c8e;
+            }
+            a {
+                color: inherit;
+            }
+        }
+
+        .currentDate {
+            font-size: calc(1rem + 0.5vw);
+            text-align: right;
+            width: 25%;
+        }
+    }
+    .searchContainer {
+        text-align: center;
+        margin: 1% 0;
+        .searchAsset {
+            border: 1px solid #848c8e;
+            width: 40%;
+            padding: 0.5rem 1rem;
+            font-size: calc(1rem + 0.5vw);
+            border-radius: 1rem;
+            background: #f1f2ee;
+            transition: all 0.3s ease-in-out;
+            &:hover,
+            &:focus {
+                box-shadow: 2px 2px 5px #435058;
+            }
+        }
+    }
+    .resultDashboardArea {
+        height: 100%;
+        .dashboardHeading {
+            text-transform: capitalize;
+            font-family: "Noto Sans KR", sans-serif;
+            font-size: calc(1rem + 0.5vw);
+            text-align: center;
+            color: #435058;
+        }
+        .gridContainer {
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(9, 1fr);
+            grid-auto-rows: minmax(100px, auto);
+            grid-gap: 0.2rem;
+            .item {
+                border-left: 1px solid #435058;
+                border-right: 1px solid #435058;
+                padding: 5% 0;
+                display: flex;
+                flex-direction: column;
+                h2 {
+                    font-family: "Noto Sans KR", sans-serif;
+                    color: #435058;
+                    font-size: calc(1rem + 0.5vw);
+                    text-align: center;
+                    text-transform: capitalize;
+                    height: 10%;
+                }
+                div {
+                    height: 100%;
+                    font-family: "Noto Sans KR", sans-serif;
+                    color: #435058;
+                    font-size: calc(0.7rem + 0.5vw);
+                    display: grid;
+                    grid-auto-rows: 15%;
+                    p {
+                        margin: auto 0;
+                        padding: 5%;
+                        text-transform: capitalize;
+                        span {
+                            font-size: calc(1.5rem);
+                            text-align: center;
+                        }
+                    }
+                    form {
+                        margin: auto;
+                        width: 100%;
+                        text-align: center;
+                    }
+                    input{
+                        margin: auto;
+                        color: inherit;
+                        padding: 5% 6%;
+                        border: 1px solid #435058;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Media Queries for Tablets and Mobile Phones
+// For Tablets
+@media (max-width: 768px) {
+    .dashboardMainSection {
+        .searchContainer {
+            .searchAsset {
+                width: 70%;
+            }
+        }
+        .resultDashboardArea {
+            .gridContainer {
+                .item {
+                    h2 {
+                        height: 5%;
+                    }
+                    div {
+                        grid-auto-rows: 10%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//For Mobile Phones
+@media (max-width: 480px) {
+    .dashboardMainSection {
+        .searchContainer {
+            .searchAsset {
+                width: 70%;
+            }
+        }
+        .resultDashboardArea {
+            .gridContainer {
+                grid-template-columns: repeat(5, 1fr);
+                .assignedDate, .price, .status, .condition {
+                    display: none;
+                    
+                }
+                .item {
+                    h2 {
+                        height: 5%;
+                    }
+                    div {
+                        grid-auto-rows: 10%;
+                        align-items: center;
+                        margin-top: 40%;
+                        p {
+                            margin: 10% 0;
+                            padding: 0;
+                        }
+                    }
+                }
+                .viewDetails {
+                    .viewDetailsData {
+                        form {
+                            input[type='submit'] {
+                                width: 100%;
+                                white-space: normal;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
