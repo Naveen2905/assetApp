@@ -421,6 +421,7 @@ body {
           align-items: center;
   font-family: "Noto Sans KR", sans-serif;
   color: #435058;
+  margin: 5% auto;
 }
 
 .dashboardMainSection .dateContainer .addAsset {
@@ -451,7 +452,7 @@ body {
 .dashboardMainSection .dateContainer .currentDate {
   font-size: calc(1rem + 0.5vw);
   text-align: right;
-  width: 25%;
+  width: 45%;
 }
 
 .dashboardMainSection .searchContainer {
@@ -477,14 +478,6 @@ body {
 
 .dashboardMainSection .resultDashboardArea {
   height: 100%;
-}
-
-.dashboardMainSection .resultDashboardArea .dashboardHeading {
-  text-transform: capitalize;
-  font-family: "Noto Sans KR", sans-serif;
-  font-size: calc(1rem + 0.5vw);
-  text-align: center;
-  color: #435058;
 }
 
 .dashboardMainSection .resultDashboardArea .gridContainer {
@@ -523,7 +516,7 @@ body {
   height: 100%;
   font-family: "Noto Sans KR", sans-serif;
   color: #435058;
-  font-size: calc(0.7rem + 0.5vw);
+  font-size: calc(0.8rem + 0.5vw);
   display: -ms-grid;
   display: grid;
   grid-auto-rows: 15%;
@@ -673,6 +666,7 @@ body {
           justify-content: space-between;
   font-family: "Noto Sans KR", sans-serif;
   color: #435058;
+  margin: 5% auto;
 }
 
 .addAssetMainSection .dateContainer .dashboardLink {
@@ -903,7 +897,7 @@ body {
 }
 
 .viewDetailSection {
-  height: 90vh;
+  height: 100%;
   background: #f1f2ee;
 }
 
@@ -920,6 +914,7 @@ body {
           align-items: center;
   font-family: "Noto Sans KR", sans-serif;
   color: #435058;
+  margin: 5% auto;
 }
 
 .viewDetailSection .dateContainer .addAsset {
@@ -951,14 +946,6 @@ body {
   font-size: calc(1rem + 0.5vw);
   text-align: right;
   width: 25%;
-}
-
-.viewDetailSection .viewDetailHeading {
-  text-transform: capitalize;
-  font-family: "Noto Sans KR", sans-serif;
-  font-size: calc(1rem + 0.5vw);
-  text-align: center;
-  color: #435058;
 }
 
 .viewDetailSection .detailArea {
