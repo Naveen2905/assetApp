@@ -1,5 +1,5 @@
 .viewDetailSection {
-    height: 90vh;
+    height: 100%;
     background: #f1f2ee;
     .dateContainer {
         padding: 1% 0;
@@ -8,6 +8,7 @@
         align-items: center;
         font-family: "Noto Sans KR", sans-serif;
         color: #435058;
+        margin: 5% auto;
         .addAsset {
             border: none;
             background: #848c8e;
@@ -35,13 +36,6 @@
             text-align: right;
             width: 25%;
         }
-    }
-    .viewDetailHeading {
-        text-transform: capitalize;
-        font-family: "Noto Sans KR", sans-serif;
-        font-size: calc(1rem + 0.5vw);
-        text-align: center;
-        color: #435058;
     }
     .detailArea {
         height: 80%;

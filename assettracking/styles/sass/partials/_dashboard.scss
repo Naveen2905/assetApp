@@ -3,7 +3,6 @@ body {
 }
 .dashboardHeaderSection {
     height: 10vh;
-    // background: #f1f2ee;
     .headerContainer {
         height: 100%;
         display: flex;
@@ -61,6 +60,7 @@ body {
         align-items: center;
         font-family: "Noto Sans KR", sans-serif;
         color: #435058;
+        margin: 5% auto;
         .addAsset {
             // height: 60%;
             border: none;
@@ -87,7 +87,7 @@ body {
         .currentDate {
             font-size: calc(1rem + 0.5vw);
             text-align: right;
-            width: 25%;
+            width: 45%;
         }
     }
     .searchContainer {
@@ -109,13 +109,6 @@ body {
     }
     .resultDashboardArea {
         height: 100%;
-        .dashboardHeading {
-            text-transform: capitalize;
-            font-family: "Noto Sans KR", sans-serif;
-            font-size: calc(1rem + 0.5vw);
-            text-align: center;
-            color: #435058;
-        }
         .gridContainer {
             height: 100%;
             display: grid;
@@ -140,7 +133,7 @@ body {
                     height: 100%;
                     font-family: "Noto Sans KR", sans-serif;
                     color: #435058;
-                    font-size: calc(0.7rem + 0.5vw);
+                    font-size: calc(0.8rem + 0.5vw);
                     display: grid;
                     grid-auto-rows: 15%;
                     p {
