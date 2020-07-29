@@ -2,31 +2,82 @@ $(function () {
 
     $('.addAssetInfo').on('submit', function (e) {
         e.preventDefault();
-        const assetName = $('#assetName').val();
-        const assetCategory = $('#category').val();
-        const assignedDate = $('#assignedDate').val();
-        const assignedTo = $('#assignedTo').val();
-        const purchaseDate = $('#purchaseDate').val();
-        const location = $('#location').val();
-        const price = $('#price').val();
-        const condition = $('#condition').val();
-        const warrantyInfo = $('#warrantyInfo').val();
-        const returnedDate = $('#returnedDate').val();
-        const expiryDate = $('#expiryDate').val();
-        const additionalInfo = $('#additionalInfo').val();
-        const status = $('#status').val();
-        const modelNumber = $('#modelNumber').val();
-        const serialNumber = $('#serialNumber').val();
-        const recieptUrl = $('.recieptImage').attr('src');
+        let assetName = $('#assetName').val();
+        let assetCategory = $('#category').val();
+        let assignedDate = $('#assignedDate').val();
+        let assignedTo = $('#assignedTo').val();
+        let purchaseDate = $('#purchaseDate').val();
+        let location = $('#location').val();
+        let price = $('#price').val();
+        let condition = $('#condition').val();
+        let warrantyInfo = $('#warrantyInfo').val();
+        let returnedDate = $('#returnedDate').val();
+        let expiryDate = $('#expiryDate').val();
+        let additionalInfo = $('#additionalInfo').val();
+        let status = $('#status').val();
+        let modelNumber = $('#modelNumber').val();
+        let serialNumber = $('#serialNumber').val();
+        let recieptUrl = $('.recieptImage').attr('src');
+
+        // condition if the field is blank append with "-"
+
+        if (assetName == "") {
+            assetName = "&#8212"
+        }
+        if (assetCategory == null) {
+            assetCategory = "&#8212"
+        }
+        if (assignedDate == "") {
+            assignedDate = "&#8212"
+        }
+        if (assignedTo == "") {
+            assignedTo = "&#8212"
+        }
+        if (purchaseDate == "") {
+            purchaseDate = "&#8212"
+        }
+        if (location == "") {
+            location = "&#8212"
+        }
+        if (price == "") {
+            price = " &#8212"
+        }
+        if (condition == null) {
+            condition = "&#8212"
+        }
+        if (warrantyInfo == "") {
+            warrantyInfo = "&#8212"
+        }
+        if (returnedDate == "") {
+            returnedDate = "&#8212"
+        }
+        if (expiryDate == "") {
+            expiryDate = "&#8212"
+        }
+        if (additionalInfo == "") {
+            additionalInfo = "&#8212"
+        }
+        if (status == null) {
+            status = "&#8212"
+        }
+        if (modelNumber == "") {
+            modelNumber = "&#8212"
+        }
+        if (serialNumber == "") {
+            serialNumber = "&#8212"
+        }
+        
+
+
         // Firebase Realtime Database --------------------------- 
         const dbRef = firebase.database().ref();
 
         // creating object to push to database 
         const assetInformation = {
             assetName: assetName,
-            category : assetCategory,
+            category: assetCategory,
             assignedDate: assignedDate,
-            assignedTo : assignedTo,
+            assignedTo: assignedTo,
             purchaseDate: purchaseDate,
             assetLocation: location,
             assetPrice: `$${price}`,
