@@ -48,6 +48,7 @@ $(function () {
     const dbRef = firebase.database().ref();
     dbRef.on('value', (data) => {
         const dataInfo = data.val();
+        console.log(dataInfo);
         //Individual Data points by looping through the firebase db object
         const assetNameArray = [];
         const categoryArray = [];
@@ -61,8 +62,6 @@ $(function () {
 
         for (key in dataInfo) {
             const individualDataInfo = dataInfo[key];
-            // console.log(key);
-            // console.log(individualDataInfo);
             assetNameArray.push(`<p><span>&#9632</span> ${individualDataInfo.assetName}</p>`);
             categoryArray.push(`<p>${individualDataInfo.category}</p>`);
             assignedDateArray.push(`<p>${individualDataInfo.assignedDate}</p>`);
@@ -71,7 +70,10 @@ $(function () {
             locationArray.push(`<p>${individualDataInfo.assetLocation}</p>`);
             conditionArray.push(`<p>${individualDataInfo.assetCondition}</p>`);
             statusArray.push(`<p>${individualDataInfo.assetStatus}</p>`);
-            viewDetailsArray.push(`<form action="./viewDetails.html"><input type='submit' value='View Details' name=${key}></form>`)
+            viewDetailsArray.push(`<form action="../viewDetails.html">
+            <input type='submit' value='View Details' name=${key}>
+            <button title='Delete' class='deleteRecord' name=${key}><svg height="21" viewBox="0 0 21 21" width="21" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd" stroke="#2a2e3b" stroke-linecap="round" stroke-linejoin="round" transform="translate(2 2)"><circle cx="8.5" cy="8.5" r="8"/><g transform="matrix(0 1 -1 0 17 0)"><path d="m5.5 11.5 6-6"/><path d="m5.5 5.5 6 6"/></g></g></svg></button>
+            </form>`)
         }
 
         $('.assetData').html(assetNameArray);
@@ -86,8 +88,8 @@ $(function () {
 
 
         $('.viewDetailsData').on('click', 'input', function () {
-            console.log(this.name); //returns unique key
             const clickedButton = this.name;
+            console.log(clickedButton);
 
             for (k in dataInfo) {
                 if (clickedButton == k) {
@@ -96,10 +98,17 @@ $(function () {
                     var myData = JSON.stringify(clickedViewedDetail);
                     window.localStorage.setItem('clickedViewedDetail', myData);
                     
-
                 }
             }
         });
+
+        //Delete The record
+        $('.viewDetailsData').on('click', 'button', function (e) {
+            e.preventDefault()
+            const deleteButton = this.name; // db key
+            dbRef.child(deleteButton).remove();
+        })
+
     });
 
 });

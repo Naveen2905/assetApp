@@ -156,6 +156,10 @@ body {
                         padding: 5% 6%;
                         border: 1px solid #435058;
                         cursor: pointer;
+                        transition:all 0.3s ease-in;
+                        &:hover, &:focus {
+                            box-shadow: 2px 2px 5px #DCF763;
+                        }
                     }
                 }
             }

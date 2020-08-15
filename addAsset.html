@@ -37,7 +37,8 @@
             <div class="formContainer">
                 <form class="addAssetInfo">
                     <li class="recieptImg">
-                        <img src="" class="recieptImage" alt="Reciept Image">
+                        <img src="" class="recieptImage" >
+                        <img src="" class="assetImage" >
                     </li>
                     <li>
                         <label for="assetName">Asset Name <span class="redRequired">*</span> : </label>
@@ -140,13 +141,23 @@
                     <button class="saveButton" type="submit">Save</button>
 
                 </form>
-                <div class="uploadFile">
-                    <label for="recieptUpload">Reciept Upload <span class="redRequired">*</span> : </label>
-                    <!-- Reciept Upload  -->
-                    <input type="file" id="fileButton" value="upload">
-                    <div id="filedrag">or drop files above...</div>
-                    <div class="successUpload">Uploaded Successfully !!</div>
-                    <progress id="uploader" value="0" max="100">0%</progress>
+                <div class="imageUploadContainer">
+                    <div class="uploadFile">
+                        <label for="recieptUpload">Reciept Upload <span class="redRequired">*</span> : </label>
+                        <!-- Reciept Upload  -->
+                        <input type="file" id="fileButton" value="upload">
+                        <div id="filedrag">or drop files above...</div>
+                        <div class="successUpload">Uploaded Successfully !!</div>
+                        <progress id="uploader" value="0" max="100">0%</progress>
+                    </div>
+                    <div class="assetFile">
+                        <label for="assetUpload">Asset Image Upload <span class="redRequired">*</span> : </label>
+                        <!-- Reciept Upload  -->
+                        <input type="file" id="assetUpload" value="upload">
+                        <div id="filedrag">or drop files above...</div>
+                        <div class="successAssetUpload">Uploaded Successfully !!</div>
+                        <progress id="assetUploader" value="0" max="100">0%</progress>
+                    </div>
                 </div>
             </div>
         </section>

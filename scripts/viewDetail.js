@@ -19,9 +19,14 @@ $(function () {
     $('.detailedResult').append(`<li><span>additional info. : </span>${newMyData.additionalInfo}</li>`);
 
     if (newMyData.recieptUrl == "") {
-        $('.itemImage').html(`<img src="../assets/noImage.png" alt="${newMyData.assetName} image">`);
+        $('.itemImage').append(`<img src="../assets/noImage.png" alt="${newMyData.assetName} image">`);
     } else {
+        $('.itemImage').append(`<img src="${newMyData.recieptUrl}" alt="${newMyData.assetName} image">`);
+    }
 
-        $('.itemImage').html(`<img src="${newMyData.recieptUrl}" alt="${newMyData.assetName} image">`);
+    if (newMyData.assetUrl == "") {
+        $('.itemImage').append(`<img src="../assets/noImage.png" alt="${newMyData.assetName} image">`);
+    } else {
+        $('.itemImage').append(`<img src="${newMyData.assetUrl}" alt="${newMyData.assetName} image">`);
     }
 }); 

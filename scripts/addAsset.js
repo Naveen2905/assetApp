@@ -18,6 +18,7 @@ $(function () {
         let modelNumber = $('#modelNumber').val();
         let serialNumber = $('#serialNumber').val();
         let recieptUrl = $('.recieptImage').attr('src');
+        let assetUrl = $('.assetImage').attr('src');
 
         // condition if the field is blank append with "-"
 
@@ -66,7 +67,7 @@ $(function () {
         if (serialNumber == "") {
             serialNumber = "&#8212"
         }
-        
+
 
 
         // Firebase Realtime Database --------------------------- 
@@ -90,6 +91,7 @@ $(function () {
             modelNumber: modelNumber,
             serialNumber: serialNumber,
             recieptUrl: recieptUrl,
+            assetUrl : assetUrl,
         }
         // Pushed to firebase db 
         const firebaseObj = dbRef.push(assetInformation, function () {
@@ -100,6 +102,7 @@ $(function () {
         //To Reset the form fields
         $('input[type=text],input[type=number],input[type=date],select').val('');
         $('.recieptImage').attr('src', '');
+        $('.assetImage').attr('src', '');
 
 
         // Get data from firebase code is in welcome js file.....
@@ -107,6 +110,8 @@ $(function () {
     })
 
     // Firebase Storage ------------------
+
+    //Reciept Image upload
     let imgUrl;
     const uploader = $('#uploader');
     const fileButton = $('#fileButton');
@@ -148,6 +153,54 @@ $(function () {
                 var newRef = firebaseRef.ref();
                 newRef.child('reciepts/' + file.name).getDownloadURL().then(function (url) {
                     $(".recieptImage").attr("src", url);
+                })
+            }
+        )
+
+    })
+
+    //Asset Image upload
+    let assetImgUrl;
+    const assetUploader = $('#assetUploader');
+    const assetFileButton = $('#assetUpload');
+    //Listen for file selection
+
+    assetFileButton.change(function (e) {
+        //Get the File
+        const file = e.target.files[0];
+        // Create Storage Ref 
+        const storageRef = firebase.storage().ref('assets/' + file.name)
+        // Upload File
+        const task = storageRef.put(file);
+        //Update Progress Bar
+        task.on('state_changed',
+
+            function progress(snapshot) {
+                const percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                assetUploader[0].value = percentage;
+
+            },
+
+            function error(err) {
+
+            },
+
+            function complete() {
+                //After uploading finishes it will reset the input
+                fileButton.val('');
+                assetUploader[0].value = 0;
+
+                $('.successAssetUpload').css('display', 'block');
+                //Hide Success Message after 3 secs
+                setTimeout(function () {
+                    $('.successAssetUpload').css('display', 'none');
+                }, 3000)
+
+                //Get Asset ImageUrl
+                var firebaseRef = firebase.storage()
+                var newRef = firebaseRef.ref();
+                newRef.child('assets/' + file.name).getDownloadURL().then(function (url) {
+                    $(".assetImage").attr("src", url);
                 })
             }
         )
