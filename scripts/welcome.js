@@ -54,7 +54,7 @@ $(function () {
         const categoryArray = [];
         const assignedDateArray = [];
         const assignedToArray = [];
-        const priceArray = [];
+        const purchasePriceArray = [];
         const locationArray = [];
         const conditionArray = [];
         const viewDetailsArray = []; //ToDo ------------------------
@@ -66,7 +66,7 @@ $(function () {
             categoryArray.push(`<p>${individualDataInfo.category}</p>`);
             assignedDateArray.push(`<p>${individualDataInfo.assignedDate}</p>`);
             assignedToArray.push(`<p>${individualDataInfo.assignedTo}</p>`);
-            priceArray.push(`<p>${individualDataInfo.assetPrice}</p>`);
+            purchasePriceArray.push(`<p>${individualDataInfo.assetPurchasePrice}</p>`);
             locationArray.push(`<p>${individualDataInfo.assetLocation}</p>`);
             conditionArray.push(`<p>${individualDataInfo.assetCondition}</p>`);
             statusArray.push(`<p>${individualDataInfo.assetStatus}</p>`);
@@ -80,7 +80,7 @@ $(function () {
         $('.categoryData').html(categoryArray);
         $('.assignedDateData').html(assignedDateArray);
         $('.assignedToData').html(assignedToArray);
-        $('.priceData').html(priceArray);
+        $('.purchasePriceData').html(purchasePriceArray);
         $('.locationData').html(locationArray);
         $('.conditionData').html(conditionArray);
         $('.statusData').html(statusArray);

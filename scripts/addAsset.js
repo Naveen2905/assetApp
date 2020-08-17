@@ -8,7 +8,8 @@ $(function () {
         let assignedTo = $('#assignedTo').val();
         let purchaseDate = $('#purchaseDate').val();
         let location = $('#location').val();
-        let price = $('#price').val();
+        let purchasePrice = $('#purchasePrice').val();
+        let resaleValue = $('#resaleValue').val();
         let condition = $('#condition').val();
         let warrantyInfo = $('#warrantyInfo').val();
         let returnedDate = $('#returnedDate').val();
@@ -40,8 +41,11 @@ $(function () {
         if (location == "") {
             location = "&#8212"
         }
-        if (price == "") {
-            price = " &#8212"
+        if (purchasePrice == "") {
+            purchasePrice = " &#8212"
+        }
+        if (resaleValue == "") {
+            purchasePrice = " &#8212"
         }
         if (condition == null) {
             condition = "&#8212"
@@ -81,7 +85,8 @@ $(function () {
             assignedTo: assignedTo,
             purchaseDate: purchaseDate,
             assetLocation: location,
-            assetPrice: `$${price}`,
+            assetPurchasePrice: `$${purchasePrice}`,
+            assetResaleValue : `$${resaleValue}`,
             assetCondition: condition,
             warrantyInfo: warrantyInfo,
             returnedDate: returnedDate,
