@@ -1,5 +1,13 @@
 $(function () {
 
+    // add new option to category
+    $('.addCategory').click(function(e) {
+        e.preventDefault()
+        let buttonInput = prompt('Category Name')
+
+        $('#category').append(`<option value="${buttonInput}">${buttonInput}</option>`)
+    })
+
     $('.addAssetInfo').on('submit', function (e) {
         e.preventDefault();
         let assetName = $('#assetName').val();
@@ -85,8 +93,8 @@ $(function () {
             assignedTo: assignedTo,
             purchaseDate: purchaseDate,
             assetLocation: location,
-            assetPurchasePrice: `$${purchasePrice}`,
-            assetResaleValue : `$${resaleValue}`,
+            assetPurchasePrice: purchasePrice,
+            assetResaleValue : resaleValue,
             assetCondition: condition,
             warrantyInfo: warrantyInfo,
             returnedDate: returnedDate,

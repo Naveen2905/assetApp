@@ -59,7 +59,8 @@ $(function () {
         const conditionArray = [];
         const viewDetailsArray = []; //ToDo ------------------------
         const statusArray = [];
-
+        const priceArray = []
+        const resaleArray = []
         for (key in dataInfo) {
             const individualDataInfo = dataInfo[key];
             assetNameArray.push(`<p><span>&#9632</span> ${individualDataInfo.assetName}</p>`);
@@ -74,6 +75,9 @@ $(function () {
             <input type='submit' value='View Details' name=${key}>
             <button title='Delete' class='deleteRecord' name=${key}><svg height="21" viewBox="0 0 21 21" width="21" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd" stroke="#2a2e3b" stroke-linecap="round" stroke-linejoin="round" transform="translate(2 2)"><circle cx="8.5" cy="8.5" r="8"/><g transform="matrix(0 1 -1 0 17 0)"><path d="m5.5 11.5 6-6"/><path d="m5.5 5.5 6 6"/></g></g></svg></button>
             </form>`)
+
+            priceArray.push(parseInt(individualDataInfo.assetPurchasePrice));
+            resaleArray.push(parseInt(individualDataInfo.assetResaleValue));
         }
 
         $('.assetData').html(assetNameArray);
@@ -97,7 +101,7 @@ $(function () {
                     // console.log(clickedViewedDetail);
                     var myData = JSON.stringify(clickedViewedDetail);
                     window.localStorage.setItem('clickedViewedDetail', myData);
-                    
+
                 }
             }
         });
@@ -107,6 +111,78 @@ $(function () {
             e.preventDefault()
             const deleteButton = this.name; // db key
             dbRef.child(deleteButton).remove();
+        })
+
+
+        // Filter Assigned to Data
+
+        $('.searchForm').on('submit', (e) => {
+            e.preventDefault();
+
+            function capitalizeFirstLetter(string) {
+                return string.charAt(0).toUpperCase() + string.slice(1);
+            }
+            let searchString = $('.searchString').val();
+            searchString = capitalizeFirstLetter(searchString);
+
+            // Assigned To
+            dbRef.orderByChild('assignedTo').equalTo(searchString).on("value", function (snapshot) {
+                const filterDataInfo = snapshot.val();
+
+                const assetNameArray = [];
+                const categoryArray = [];
+                const assignedDateArray = [];
+                const assignedToArray = [];
+                const purchasePriceArray = [];
+                const locationArray = [];
+                const conditionArray = [];
+                const viewDetailsArray = []; //ToDo ------------------------
+                const statusArray = [];
+
+                for (k in filterDataInfo) {
+                    const individualFilterDataInfo = filterDataInfo[k];
+                    console.log(individualFilterDataInfo);
+
+                    assetNameArray.push(`<p><span>&#9632</span> ${individualFilterDataInfo.assetName}</p>`);
+                    categoryArray.push(`<p>${individualFilterDataInfo.category}</p>`);
+                    assignedDateArray.push(`<p>${individualFilterDataInfo.assignedDate}</p>`);
+                    assignedToArray.push(`<p>${individualFilterDataInfo.assignedTo}</p>`);
+                    purchasePriceArray.push(`<p>${individualFilterDataInfo.assetPurchasePrice}</p>`);
+                    locationArray.push(`<p>${individualFilterDataInfo.assetLocation}</p>`);
+                    conditionArray.push(`<p>${individualFilterDataInfo.assetCondition}</p>`);
+                    statusArray.push(`<p>${individualFilterDataInfo.assetStatus}</p>`);
+                    viewDetailsArray.push(`<form action="../viewDetails.html">
+            <input type='submit' value='View Details' name=${k}>
+            <button title='Delete' class='deleteRecord' name=${k}><svg height="21" viewBox="0 0 21 21" width="21" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd" stroke="#2a2e3b" stroke-linecap="round" stroke-linejoin="round" transform="translate(2 2)"><circle cx="8.5" cy="8.5" r="8"/><g transform="matrix(0 1 -1 0 17 0)"><path d="m5.5 11.5 6-6"/><path d="m5.5 5.5 6 6"/></g></g></svg></button>
+            </form>`)
+                }
+
+                $('.assetData').html(assetNameArray);
+                $('.categoryData').html(categoryArray);
+                $('.assignedDateData').html(assignedDateArray);
+                $('.assignedToData').html(assignedToArray);
+                $('.purchasePriceData').html(purchasePriceArray);
+                $('.locationData').html(locationArray);
+                $('.conditionData').html(conditionArray);
+                $('.statusData').html(statusArray);
+                $('.viewDetailsData').html(viewDetailsArray);
+
+            });
+
+        })
+
+        // Sorting Category
+        $('.categorySort').on('click', (e) => {
+            e.preventDefault();
+            console.log('Sorted');
+        })
+
+        // Adding purchase price and resale value
+        $('.totalPurchaseValue').on('click', (e)=> {
+            e.preventDefault();
+            const totalP = priceArray.reduce((a, b) => a + b, 0)
+            const totalR = resaleArray.reduce((a, b) => a + b, 0)
+            swal(`Total Purchase Price - $${totalP}` , `Total Resale Value - $${totalR}`);
         })
 
     });

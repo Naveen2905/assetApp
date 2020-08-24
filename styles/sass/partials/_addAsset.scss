@@ -100,6 +100,27 @@
                         width: auto;
                     }
                 }
+                .categoryContainer {
+                    label {
+                        position: relative;
+                    }
+                    .addCategory {
+                        position: absolute;
+                        bottom: 0.5rem;
+                        left: -1.5rem;
+                        background: none;
+                        padding: 0;
+                        border: none;
+                        cursor: pointer;
+                        transition: all 0.3s ease-in;
+                        &:hover {
+                            scale: 1.2;
+                        }
+                    }
+                    #category {
+                        text-transform: capitalize;
+                    }
+                }
                 li {
                     margin: 1rem 0;
                     color: #435058;

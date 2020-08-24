@@ -449,10 +449,20 @@ body {
   color: inherit;
 }
 
+.dashboardMainSection .dateContainer .totalPurchaseValue {
+  border: 1px solid #848c8e;
+  font-size: calc(1rem + 0.5vw);
+  color: #435058;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  margin: auto 0;
+  text-transform: capitalize;
+}
+
 .dashboardMainSection .dateContainer .currentDate {
   font-size: calc(1rem + 0.5vw);
   text-align: right;
-  width: 45%;
 }
 
 .dashboardMainSection .searchContainer {
@@ -460,7 +470,7 @@ body {
   margin: 1% 0;
 }
 
-.dashboardMainSection .searchContainer .searchAsset {
+.dashboardMainSection .searchContainer .searchString {
   border: 1px solid #848c8e;
   width: 40%;
   padding: 0.5rem 1rem;
@@ -471,9 +481,27 @@ body {
   transition: all 0.3s ease-in-out;
 }
 
-.dashboardMainSection .searchContainer .searchAsset:hover, .dashboardMainSection .searchContainer .searchAsset:focus {
+.dashboardMainSection .searchContainer .searchString:hover, .dashboardMainSection .searchContainer .searchString:focus {
   -webkit-box-shadow: 2px 2px 5px #435058;
           box-shadow: 2px 2px 5px #435058;
+}
+
+.dashboardMainSection .searchContainer .searchSubmitButton {
+  border: 1px solid #848c8e;
+  font-size: calc(1rem + 0.5vw);
+  color: #435058;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  margin: auto 0;
+  text-transform: capitalize;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+.dashboardMainSection .searchContainer .searchSubmitButton:hover, .dashboardMainSection .searchContainer .searchSubmitButton:focus {
+  -webkit-box-shadow: 2px 2px 5px #848c8e;
+          box-shadow: 2px 2px 5px #848c8e;
 }
 
 .dashboardMainSection .resultDashboardArea {
@@ -488,6 +516,19 @@ body {
       grid-template-columns: repeat(9, 1fr);
   grid-auto-rows: minmax(100px, auto);
   grid-gap: 0.2rem;
+}
+
+.dashboardMainSection .resultDashboardArea .gridContainer .category {
+  position: relative;
+}
+
+.dashboardMainSection .resultDashboardArea .gridContainer .category .categorySort {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 .dashboardMainSection .resultDashboardArea .gridContainer .item {
@@ -754,6 +795,30 @@ body {
   margin: auto 10%;
   height: auto;
   width: auto;
+}
+
+.addAssetMainSection .mainArea .formContainer .addAssetInfo .categoryContainer label {
+  position: relative;
+}
+
+.addAssetMainSection .mainArea .formContainer .addAssetInfo .categoryContainer .addCategory {
+  position: absolute;
+  bottom: 0.5rem;
+  left: -1.5rem;
+  background: none;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+.addAssetMainSection .mainArea .formContainer .addAssetInfo .categoryContainer .addCategory:hover {
+  scale: 1.2;
+}
+
+.addAssetMainSection .mainArea .formContainer .addAssetInfo .categoryContainer #category {
+  text-transform: capitalize;
 }
 
 .addAssetMainSection .mainArea .formContainer .addAssetInfo li {
