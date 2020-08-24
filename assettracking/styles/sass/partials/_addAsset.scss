@@ -92,8 +92,34 @@
                 flex-direction: column;
                 flex-wrap: wrap;
                 .recieptImg {
-                    width: 20%;
+                    width: 30%;
                     margin: 0 auto;
+                    img {
+                        margin: auto 10%;
+                        height: auto;
+                        width: auto;
+                    }
+                }
+                .categoryContainer {
+                    label {
+                        position: relative;
+                    }
+                    .addCategory {
+                        position: absolute;
+                        bottom: 0.5rem;
+                        left: -1.5rem;
+                        background: none;
+                        padding: 0;
+                        border: none;
+                        cursor: pointer;
+                        transition: all 0.3s ease-in;
+                        &:hover {
+                            scale: 1.2;
+                        }
+                    }
+                    #category {
+                        text-transform: capitalize;
+                    }
                 }
                 li {
                     margin: 1rem 0;
@@ -157,53 +183,109 @@
                     }
                 }
             }
-            .uploadFile {
-                width: 30%;
-                padding: 5% 1%;
-                color: #435058;
+            .imageUploadContainer {
+                display: flex;
+                flex-direction: column;
                 order: -1;
-                label {
+                .uploadFile {
                     width: 100%;
-                    display: inline-block;
-                    text-align: left;
-                    font-family: "Noto Sans KR", sans-serif;
-                    font-size: calc(1rem + 0.5vw);
-                    .redRequired {
-                        color: red;
+                    padding: 5% 1%;
+                    color: #435058;
+                    order: -1;
+                    margin: 10% 0;
+                    label {
+                        width: 100%;
+                        display: inline-block;
+                        text-align: left;
+                        font-family: "Noto Sans KR", sans-serif;
+                        font-size: calc(1rem + 0.5vw);
+                        .redRequired {
+                            color: red;
+                        }
+                    }
+                    input[type="file"] {
+                        border: none;
+                        margin: 2% auto;
+                        padding: 0.5rem 1rem;
+                        width: 100%;
+                        height: 50%;
+                        background: #bfb7b6;
+                        font-size: calc(0.7rem + 0.5vw);
+                        color: #435058;
+                        cursor: pointer;
+                        border-radius: 1rem;
+                    }
+                    #filedrag {
+                        font-family: "Noto Sans KR", sans-serif;
+                        font-size: calc(1rem + 0.5vw);
+                    }
+                    .successUpload {
+                        background: #dcf763;
+                        color: #435058;
+                        padding: 1%;
+                        font-family: "Noto Sans KR", sans-serif;
+                        font-size: calc(1rem + 0.5vw);
+                        display: none;
+                    }
+                    #uploader {
+                        -webkit-appearance: none;
+                        appearance: none;
+                        width: 100%;
+                        height: 2rem;
+                        margin: 2% auto;
+                        text-align: center;
+                        border-radius: 1rem;
                     }
                 }
-                input[type="file"] {
-                    border: none;
-                    margin: 2% auto;
-                    padding: 0.5rem 1rem;
+                .assetFile {
                     width: 100%;
-                    height: 25%;
-                    background: #bfb7b6;
-                    font-size: calc(0.7rem + 0.5vw);
+                    padding: 5% 1%;
                     color: #435058;
-                    cursor: pointer;
-                    border-radius: 1rem;
-                }
-                #filedrag {
-                    font-family: "Noto Sans KR", sans-serif;
-                    font-size: calc(1rem + 0.5vw);
-                }
-                .successUpload{
-                    background: #DCF763;
-                    color: #435058;
-                    padding: 1%;
-                    font-family: "Noto Sans KR", sans-serif;
-                    font-size: calc(1rem + 0.5vw);
-                    display: none;
-                }
-                #uploader {
-                    -webkit-appearance: none;
-                    appearance: none;
-                    width: 100%;
-                    height: 2rem;
-                    margin: 2% auto;
-                    text-align: center;
-                    border-radius: 1rem;
+                    order: -1;
+                    margin: 10% 0;
+                    label {
+                        width: 100%;
+                        display: inline-block;
+                        text-align: left;
+                        font-family: "Noto Sans KR", sans-serif;
+                        font-size: calc(1rem + 0.5vw);
+                        .redRequired {
+                            color: red;
+                        }
+                    }
+                    input[type="file"] {
+                        border: none;
+                        margin: 2% auto;
+                        padding: 0.5rem 1rem;
+                        width: 100%;
+                        height: 50%;
+                        background: #bfb7b6;
+                        font-size: calc(0.7rem + 0.5vw);
+                        color: #435058;
+                        cursor: pointer;
+                        border-radius: 1rem;
+                    }
+                    #filedrag {
+                        font-family: "Noto Sans KR", sans-serif;
+                        font-size: calc(1rem + 0.5vw);
+                    }
+                    .successAssetUpload {
+                        background: #dcf763;
+                        color: #435058;
+                        padding: 1%;
+                        font-family: "Noto Sans KR", sans-serif;
+                        font-size: calc(1rem + 0.5vw);
+                        display: none;
+                    }
+                    #assetUploader {
+                        -webkit-appearance: none;
+                        appearance: none;
+                        width: 100%;
+                        height: 2rem;
+                        margin: 2% auto;
+                        text-align: center;
+                        border-radius: 1rem;
+                    }
                 }
             }
         }
@@ -232,9 +314,16 @@
                         }
                     }
                 }
-                .uploadFile {
-                    width: 100%;
-                    order: -1;
+                .imageUploadContainer {
+                    .uploadFile {
+                        width: 100%;
+                        order: -1;
+                        margin: 2% 0;
+                    }
+                    .assetFile {
+                        width: 100%;
+                        margin: 2% 0;
+                    }
                 }
             }
         }

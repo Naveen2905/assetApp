@@ -1,5 +1,13 @@
 $(function () {
 
+    // add new option to category
+    $('.addCategory').click(function(e) {
+        e.preventDefault()
+        let buttonInput = prompt('Category Name')
+
+        $('#category').append(`<option value="${buttonInput}">${buttonInput}</option>`)
+    })
+
     $('.addAssetInfo').on('submit', function (e) {
         e.preventDefault();
         let assetName = $('#assetName').val();
@@ -8,7 +16,8 @@ $(function () {
         let assignedTo = $('#assignedTo').val();
         let purchaseDate = $('#purchaseDate').val();
         let location = $('#location').val();
-        let price = $('#price').val();
+        let purchasePrice = $('#purchasePrice').val();
+        let resaleValue = $('#resaleValue').val();
         let condition = $('#condition').val();
         let warrantyInfo = $('#warrantyInfo').val();
         let returnedDate = $('#returnedDate').val();
@@ -18,6 +27,7 @@ $(function () {
         let modelNumber = $('#modelNumber').val();
         let serialNumber = $('#serialNumber').val();
         let recieptUrl = $('.recieptImage').attr('src');
+        let assetUrl = $('.assetImage').attr('src');
 
         // condition if the field is blank append with "-"
 
@@ -39,8 +49,11 @@ $(function () {
         if (location == "") {
             location = "&#8212"
         }
-        if (price == "") {
-            price = " &#8212"
+        if (purchasePrice == "") {
+            purchasePrice = " &#8212"
+        }
+        if (resaleValue == "") {
+            purchasePrice = " &#8212"
         }
         if (condition == null) {
             condition = "&#8212"
@@ -66,7 +79,7 @@ $(function () {
         if (serialNumber == "") {
             serialNumber = "&#8212"
         }
-        
+
 
 
         // Firebase Realtime Database --------------------------- 
@@ -80,7 +93,8 @@ $(function () {
             assignedTo: assignedTo,
             purchaseDate: purchaseDate,
             assetLocation: location,
-            assetPrice: `$${price}`,
+            assetPurchasePrice: purchasePrice,
+            assetResaleValue : resaleValue,
             assetCondition: condition,
             warrantyInfo: warrantyInfo,
             returnedDate: returnedDate,
@@ -90,6 +104,7 @@ $(function () {
             modelNumber: modelNumber,
             serialNumber: serialNumber,
             recieptUrl: recieptUrl,
+            assetUrl : assetUrl,
         }
         // Pushed to firebase db 
         const firebaseObj = dbRef.push(assetInformation, function () {
@@ -100,6 +115,7 @@ $(function () {
         //To Reset the form fields
         $('input[type=text],input[type=number],input[type=date],select').val('');
         $('.recieptImage').attr('src', '');
+        $('.assetImage').attr('src', '');
 
 
         // Get data from firebase code is in welcome js file.....
@@ -107,6 +123,8 @@ $(function () {
     })
 
     // Firebase Storage ------------------
+
+    //Reciept Image upload
     let imgUrl;
     const uploader = $('#uploader');
     const fileButton = $('#fileButton');
@@ -148,6 +166,54 @@ $(function () {
                 var newRef = firebaseRef.ref();
                 newRef.child('reciepts/' + file.name).getDownloadURL().then(function (url) {
                     $(".recieptImage").attr("src", url);
+                })
+            }
+        )
+
+    })
+
+    //Asset Image upload
+    let assetImgUrl;
+    const assetUploader = $('#assetUploader');
+    const assetFileButton = $('#assetUpload');
+    //Listen for file selection
+
+    assetFileButton.change(function (e) {
+        //Get the File
+        const file = e.target.files[0];
+        // Create Storage Ref 
+        const storageRef = firebase.storage().ref('assets/' + file.name)
+        // Upload File
+        const task = storageRef.put(file);
+        //Update Progress Bar
+        task.on('state_changed',
+
+            function progress(snapshot) {
+                const percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                assetUploader[0].value = percentage;
+
+            },
+
+            function error(err) {
+
+            },
+
+            function complete() {
+                //After uploading finishes it will reset the input
+                fileButton.val('');
+                assetUploader[0].value = 0;
+
+                $('.successAssetUpload').css('display', 'block');
+                //Hide Success Message after 3 secs
+                setTimeout(function () {
+                    $('.successAssetUpload').css('display', 'none');
+                }, 3000)
+
+                //Get Asset ImageUrl
+                var firebaseRef = firebase.storage()
+                var newRef = firebaseRef.ref();
+                newRef.child('assets/' + file.name).getDownloadURL().then(function (url) {
+                    $(".assetImage").attr("src", url);
                 })
             }
         )

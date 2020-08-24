@@ -7,7 +7,8 @@ $(function () {
     $('.detailedResult').append(`<li><span>assigned date : </span>${newMyData.assignedDate}</li>`);
     $('.detailedResult').append(`<li><span>assigned to : </span>${newMyData.assignedTo}</li>`);
     $('.detailedResult').append(`<li><span>purchase date : </span>${newMyData.purchaseDate}</li>`);
-    $('.detailedResult').append(`<li><span>price : </span>${newMyData.assetPrice}</li>`);
+    $('.detailedResult').append(`<li><span>purchase price : </span>${newMyData.assetPurchasePrice}</li>`);
+    $('.detailedResult').append(`<li><span>resale value : </span>${newMyData.assetResaleValue}</li>`);
     $('.detailedResult').append(`<li><span>location : </span>${newMyData.assetLocation}</li>`);
     $('.detailedResult').append(`<li><span>status : </span>${newMyData.assetStatus}</li>`);
     $('.detailedResult').append(`<li><span>model number : </span>${newMyData.modelNumber}</li>`);
@@ -19,9 +20,14 @@ $(function () {
     $('.detailedResult').append(`<li><span>additional info. : </span>${newMyData.additionalInfo}</li>`);
 
     if (newMyData.recieptUrl == "") {
-        $('.itemImage').html(`<img src="../assets/noImage.png" alt="${newMyData.assetName} image">`);
+        $('.itemImage').append(`<img src="../assets/noImage.png" title='No Image' alt="${newMyData.assetName} image">`);
     } else {
+        $('.itemImage').append(`<img src="${newMyData.recieptUrl}" title='Asset Reciept' alt="${newMyData.assetName} image">`);
+    }
 
-        $('.itemImage').html(`<img src="${newMyData.recieptUrl}" alt="${newMyData.assetName} image">`);
+    if (newMyData.assetUrl == "") {
+        $('.itemImage').append(`<img src="../assets/noImage.png" title='No Image' alt="${newMyData.assetName} image">`);
+    } else {
+        $('.itemImage').append(`<img src="${newMyData.assetUrl}" title='Asset Image' alt="${newMyData.assetName} image">`);
     }
 }); 

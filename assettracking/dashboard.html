@@ -30,10 +30,14 @@
             <button class="addAsset">
                 <a href="./addAsset.html">add new asset</a>
             </button>
+            <button class="totalPurchaseValue">Total Purchase & Resale value</button>
             <div class="currentDate"></div>
         </section>
         <div class="searchContainer">
-            <!-- <input type="search" class="searchAsset" placeholder="Search Asset Name"> -->
+            <form class="searchForm">
+                <input type="search" class="searchString" placeholder="Search">
+                <input type="submit" class="searchSubmitButton" value="Submit">
+            </form>
         </div>
 
         <section class="resultDashboardArea wrapper">
@@ -47,6 +51,7 @@
                 </li>
                 <li class="item category">
                     <h2>category</h2>
+                    
                     <div class="categoryData"></div>
                 </li>
                 <li class="item assignedTo">
@@ -58,8 +63,8 @@
                     <div class="assignedDateData"></div>
                 </li>
                 <li class="item price">
-                    <h2>price</h2>
-                    <div class="priceData"></div>
+                    <h2>purchase price</h2>
+                    <div class="purchasePriceData"></div>
                 </li>
                 <li class="item location">
                     <h2>location</h2>
@@ -93,6 +98,7 @@
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment-with-locales.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-database.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="./scripts/firebase.js"></script>
     <script src="./scripts/addAsset.js"></script>
     <script src="./scripts/welcome.js"></script>

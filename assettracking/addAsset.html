@@ -37,15 +37,16 @@
             <div class="formContainer">
                 <form class="addAssetInfo">
                     <li class="recieptImg">
-                        <img src="" class="recieptImage" alt="Reciept Image">
+                        <img src="" class="recieptImage" >
+                        <img src="" class="assetImage" >
                     </li>
                     <li>
                         <label for="assetName">Asset Name <span class="redRequired">*</span> : </label>
                         <input type="text" id="assetName" placeholder="Asset Name">
                     </li>
 
-                    <li>
-                        <label for="category">Category <span class="redRequired">*</span> : </label>
+                    <li class="categoryContainer">
+                        <label for="category">Category <span class="redRequired">*</span> : <button class="addCategory"><svg height="21" viewBox="0 0 21 21" width="21" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd" stroke="#2a2e3b" stroke-linecap="round" stroke-linejoin="round"><path d="m5.029 10.429h10"/><path d="m10.029 15.429v-10.001"/></g></svg></button></label>
                         <select name="category" id="category">
                             <option value="" disabled selected>--Please choose an option--</option>
                             <option value="computers">Computers, Tablets & Accessories</option>
@@ -78,11 +79,13 @@
 
 
                     <li>
-                        <label for="price">Price <span class="redRequired">*</span> : </label>
-                        <input type="number" id="price" placeholder="Price of an Asset">
+                        <label for="purchasePrice">Purchase Price <span class="redRequired">*</span> : </label>
+                        <input type="number" id="purchasePrice" placeholder="Price of an Asset">
                     </li>
-
-
+                    <li>
+                        <label for="resaleValue">Resale Value <span class="redRequired">*</span> : </label>
+                        <input type="number" id="resaleValue" placeholder="Resale Value of an Asset">
+                    </li>
                     <li>
                         <label for="condition">Condition <span class="redRequired">*</span> : </label>
                         <select name="condition" id="condition">
@@ -140,13 +143,23 @@
                     <button class="saveButton" type="submit">Save</button>
 
                 </form>
-                <div class="uploadFile">
-                    <label for="recieptUpload">Reciept Upload <span class="redRequired">*</span> : </label>
-                    <!-- Reciept Upload  -->
-                    <input type="file" id="fileButton" value="upload">
-                    <div id="filedrag">or drop files above...</div>
-                    <div class="successUpload">Uploaded Successfully !!</div>
-                    <progress id="uploader" value="0" max="100">0%</progress>
+                <div class="imageUploadContainer">
+                    <div class="uploadFile">
+                        <label for="recieptUpload">Reciept Upload <span class="redRequired">*</span> : </label>
+                        <!-- Reciept Upload  -->
+                        <input type="file" id="fileButton" value="upload">
+                        <div id="filedrag">or drop files above...</div>
+                        <div class="successUpload">Uploaded Successfully !!</div>
+                        <progress id="uploader" value="0" max="100">0%</progress>
+                    </div>
+                    <div class="assetFile">
+                        <label for="assetUpload">Asset Image Upload <span class="redRequired">*</span> : </label>
+                        <!-- Reciept Upload  -->
+                        <input type="file" id="assetUpload" value="upload">
+                        <div id="filedrag">or drop files above...</div>
+                        <div class="successAssetUpload">Uploaded Successfully !!</div>
+                        <progress id="assetUploader" value="0" max="100">0%</progress>
+                    </div>
                 </div>
             </div>
         </section>
