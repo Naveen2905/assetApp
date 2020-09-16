@@ -54,6 +54,7 @@ $(function () {
         const categoryArray = [];
         const assignedDateArray = [];
         const assignedToArray = [];
+        console.log(assignedToArray);
         const purchasePriceArray = [];
         const locationArray = [];
         const conditionArray = [];
@@ -118,17 +119,15 @@ $(function () {
 
         $('.searchForm').on('submit', (e) => {
             e.preventDefault();
-
-            function capitalizeFirstLetter(string) {
-                return string.charAt(0).toUpperCase() + string.slice(1);
+            function lowerFirstLetter(string) {
+                return string.charAt(0).toLowerCase() + string.slice(1);
             }
             let searchString = $('.searchString').val();
-            searchString = capitalizeFirstLetter(searchString);
-
+            searchString = lowerFirstLetter(searchString);
             // Assigned To
+
             dbRef.orderByChild('assignedTo').equalTo(searchString).on("value", function (snapshot) {
                 const filterDataInfo = snapshot.val();
-
                 const assetNameArray = [];
                 const categoryArray = [];
                 const assignedDateArray = [];
@@ -138,6 +137,8 @@ $(function () {
                 const conditionArray = [];
                 const viewDetailsArray = []; //ToDo ------------------------
                 const statusArray = [];
+                const priceArray = []
+                const resaleArray = []
 
                 for (k in filterDataInfo) {
                     const individualFilterDataInfo = filterDataInfo[k];
@@ -155,6 +156,8 @@ $(function () {
             <input type='submit' value='View Details' name=${k}>
             <button title='Delete' class='deleteRecord' name=${k}><svg height="21" viewBox="0 0 21 21" width="21" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd" stroke="#2a2e3b" stroke-linecap="round" stroke-linejoin="round" transform="translate(2 2)"><circle cx="8.5" cy="8.5" r="8"/><g transform="matrix(0 1 -1 0 17 0)"><path d="m5.5 11.5 6-6"/><path d="m5.5 5.5 6 6"/></g></g></svg></button>
             </form>`)
+                    priceArray.push(parseInt(individualFilterDataInfo.assetPurchasePrice));
+                    resaleArray.push(parseInt(individualFilterDataInfo.assetResaleValue));
                 }
 
                 $('.assetData').html(assetNameArray);
@@ -167,6 +170,14 @@ $(function () {
                 $('.statusData').html(statusArray);
                 $('.viewDetailsData').html(viewDetailsArray);
 
+                // Adding purchase price and resale value
+                $('.totalPurchaseValue').on('click', (e) => {
+                    e.preventDefault();
+                    const totalP = priceArray.reduce((a, b) => a + b, 0)
+                    const totalR = resaleArray.reduce((a, b) => a + b, 0)
+                    swal(`Total Purchase Price - $${totalP}`, `Total Resale Value - $${totalR}`);
+                })
+
             });
 
         })
@@ -178,11 +189,11 @@ $(function () {
         })
 
         // Adding purchase price and resale value
-        $('.totalPurchaseValue').on('click', (e)=> {
+        $('.totalPurchaseValue').on('click', (e) => {
             e.preventDefault();
             const totalP = priceArray.reduce((a, b) => a + b, 0)
             const totalR = resaleArray.reduce((a, b) => a + b, 0)
-            swal(`Total Purchase Price - $${totalP}` , `Total Resale Value - $${totalR}`);
+            swal(`Total Purchase Price - $${totalP}`, `Total Resale Value - $${totalR}`);
         })
 
     });
