@@ -3,14 +3,13 @@ var app_firebase = {}
 $(function () {
     // Your web app's Firebase configuration
     var firebaseConfig = {
-        apiKey: "AIzaSyDM9x1_CskQ5v46ixNhVfsOyB6bvLpkS5M",
-        authDomain: "asset-tracking-app-29783.firebaseapp.com",
-        databaseURL: "https://asset-tracking-app-29783.firebaseio.com",
-        projectId: "asset-tracking-app",
-        storageBucket: "gs://asset-tracking-app-29783.appspot.com",
-        messagingSenderId: "973877790467",
-        appId: "1:973877790467:web:aeae67d018753d26504b36",
-        measurementId: "G-NBV86DDVCB"
+        apiKey: "AIzaSyCirKRHqafcdwI7r5zwcQBgSUREfbhwmWc",
+        authDomain: "assettrackingapp-7b9fb.firebaseapp.com",
+        databaseURL: "https://assettrackingapp-7b9fb.firebaseio.com",
+        projectId: "assettrackingapp-7b9fb",
+        storageBucket: "assettrackingapp-7b9fb.appspot.com",
+        messagingSenderId: "724226181612",
+        appId: "1:724226181612:web:f58486869279706e04d8c9"
     };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
