@@ -794,7 +794,7 @@ body {
 .addAssetMainSection .mainArea .formContainer .addAssetInfo .recieptImg img {
   margin: auto 10%;
   height: auto;
-  width: auto;
+  width: 100%;
 }
 
 .addAssetMainSection .mainArea .formContainer .addAssetInfo .categoryContainer label {

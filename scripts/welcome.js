@@ -48,13 +48,11 @@ $(function () {
     const dbRef = firebase.database().ref();
     dbRef.on('value', (data) => {
         const dataInfo = data.val();
-        console.log(dataInfo);
         //Individual Data points by looping through the firebase db object
         const assetNameArray = [];
         const categoryArray = [];
         const assignedDateArray = [];
         const assignedToArray = [];
-        console.log(assignedToArray);
         const purchasePriceArray = [];
         const locationArray = [];
         const conditionArray = [];
